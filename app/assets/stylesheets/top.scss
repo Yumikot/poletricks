@@ -1,0 +1,162 @@
+.logop{
+	margin-right: 30px;
+
+}
+.nav-item{
+	padding-left: 30px;
+}
+.form-inline{
+	padding-right: 20px;
+}
+.icon{
+	padding-right: 40px;
+}
+
+.jumbotron-extend{
+	background-image: url("../images/background.png");
+    background-size: cover;
+}
+
+.jumbotron-extend h1,h2,p{
+	color: white;
+	text-align: center;
+}
+
+.caption{
+	text-align: center;
+
+}
+
+
+/*動画*/
+.row{
+	margin-top: 40px;
+}
+.col-md-12 h2{
+	color:black;
+	font-weight:bold;
+}
+/*about*/
+.about{
+	text-align: center;
+	margin-top: 40px;
+}
+.street{
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.jumbotron-extend2 p{
+	color:black;
+}
+.lead{
+	margin-top: 20px;
+}
+/*howtouse*/
+.howtouse{
+	text-align: center;
+	margin-top: 40px;
+	margin-bottom: 30px;
+}
+.col-sm{
+	margin-left: 40px;
+}
+.card-text{
+	text-align:left;
+}
+/*cta*/
+.cta{
+	text-align: center;
+}
+.lets{
+	margin-bottom: 20px;
+}
+.btn-cta{
+	width: 300px
+}
+/*profile*/
+.profile{
+	text-align: center;
+}
+.u-ki{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	width: 150px;
+	height: 190px;
+	border-radius: 50%;	
+}
+
+.profile p{
+	color:black;
+}
+/*trickpage*/
+.tricks{
+	margin-bottom: 20px;
+	margin-top: 10px;
+}
+.pagenate{
+	padding-right: 30px;
+}
+
+/*trickspage*/
+.jumbotron-extend3{
+	background-image: url("../img/sanko.png");
+    background-size: cover;
+    height: 400px;
+}
+
+
+.searchform{
+	height: 40px;
+	padding-left: 30px;
+	padding-top: 20px;
+}
+
+
+/*videopage*/
+.mainvideo{
+	background: black;
+	margin-bottom: 0;
+	text-align: center;
+}
+.videoicon{
+	margin-left: 100px;
+}
+
+.videotitle{
+	background: black;
+	color: white;
+	height: 50px;
+	margin: 0;
+	text-align: center;
+	padding-bottom: 30px;
+
+}
+
+/*関連動画*/
+
+.relation{
+	text-align: center;
+	font-weight: bold;
+	
+}
+.icon{
+	padding-left: 20px;
+}
+
+
+.footer{
+	background: #191919;
+	height: 280px;
+	width:100%;
+}
+.footer-logo{
+	float: left;
+}
+
+	
+// Place all the styles related to the top controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
