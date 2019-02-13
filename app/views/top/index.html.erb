@@ -26,23 +26,24 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Top<span class="sr-only">(current)</span></a>
+       <%= link_to "Top",   '#' %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">About</a>
+        <%= link_to "About",   '#' %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Blog</a>
+        <%= link_to "Blog",   '#' %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Contact</a>
+       <%= link_to "Contact",   '#' %>
       </li>
     </ul>
   </div>
 
   <nav class="navbar navbar-light bg-white">
   <form class="form-inline">
-	    <button class="btn btn-outline-warning mx-2" type="button">Signup</button>
+      <%=link_to"Sign up", signup_path, class: "btn btn-outline-warning mx-2" %>
+	    
 	    <button class="btn btn-outline-warning mx-2" type="button">Login</button>
    </form>
 </nav>
@@ -65,7 +66,8 @@
 	  <p>Let's get started!</p>
 	 
 	  <div class="caption">
-  	    <a class="btn btn-warning btn-lg" href="#" role="button">create your account</a>
+	      <%=link_to"create your account", signup_path, class: "btn btn-warning btn-lg" %>
+  	   
   	  </div>
   </div>
  </div>
@@ -115,7 +117,7 @@
 <div class="about">
 	<div class="jumbotron jumbotron-extend2">
 	  <h3>About</h3>
-	  <img src="img/street.jpg" alt="streetpole" class="street">
+	  <%= image_tag'street.jpg', :size => '100x100' %>
 	  
 	  <p class="lead">技の名前やイメージを簡単に検索できたらいいな</p>
 	  <p>自分がどれだけできるようになったのか可視化できたら面白いな</p>
@@ -167,7 +169,7 @@
 
 <div class="profile">
 <h3>profile</h3>
-<img src="img/mukashi.jpg" alt="profile" class="u-ki">
+<%=image_tag'mukashi.jpg', :size => '100x100' %>
 <h3>開発者:Yumiko Tezuka(U-ki)</h3>
 <p>ポールダンサー・エアリアリスト</p>
 <p>ポールダンスやエアリアルのショーを日本全国津々浦々で行なっています。</p>
@@ -191,9 +193,9 @@
              <div class="col-12 text-center">
              	<nav id="fotter-menu1">
 						<ul style="list-style: none;">
-						<li><a href="#">Top</a></li>
-						<li><a href="#">Blog</a></li>
-						<li><a href="#">Contact</a></li>
+						<li><%= link_to "Top", '#' %></li>
+						<li><%= link_to "Blog", '#' %></li>
+						<li><%= link_to "Contact", '#' %></li>
 						<hr>
 						 <li>
 							<a href="#"><i class="fab fa-twitter"></i></a>
