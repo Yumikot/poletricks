@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'top#index'
   get 'signup'  => 'users#new'
   get 'mytricks_pages/index'
+  get 'videos/index'
    
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
