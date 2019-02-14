@@ -42,9 +42,10 @@
 
   <nav class="navbar navbar-light bg-white">
   <form class="form-inline">
-      <%=link_to"Sign up", signup_path, class: "btn btn-outline-warning mx-2" %>
+          <%=link_to"Sign up", signup_path, class: "btn btn-outline-warning mx-2" %>
 	    
-	    <button class="btn btn-outline-warning mx-2" type="button">Login</button>
+	   
+	     <%=link_to"Log in", login_path, class: "btn btn-outline-warning mx-2" %>
    </form>
 </nav>
 	<div class="icon">
@@ -159,13 +160,12 @@
 <div class="jumbotron">
 	
   <h1 class="lets">さあトリックをマスターしましょう!</h1>
-  <a class="btn-cta btn-warning btn-lg" href="#" role="button">無料ではじめる</a>
+  
+   <%=link_to"無料ではじめる", signup_path, class: "btn-cta btn-warning btn-lg" %>
 </div>
 </div>
 <!--cta end-->
 <!--profile-->
-
-
 
 <div class="profile">
 <h3>profile</h3>
