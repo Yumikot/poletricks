@@ -1,0 +1,2 @@
+module MytricksPagesHelper
+end

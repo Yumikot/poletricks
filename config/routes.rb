@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'users/new'
   root 'top#index'
   get 'signup'  => 'users#new'
+  get 'mytricks_pages/index'
    
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
