@@ -1,2 +1,122 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<!DOCTYPE html>
+<html lang ="ja">
+<head>
+	<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		 <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<title>Poletricks</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<link rel="stylesheet" href="stylesheets/top.scss">
+
+</head>
+
+<body>
+	<!--nav bar start-->
+
+  <!-- Navbar content -->
+  <div class="container">
+ <nav class="navbar navbar-expand-lg navbar-light bg-white">
+     <%= image_tag'logo2red.png', :size =>'110x30' %>
+  		
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+       <%= link_to "Top",   '#' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "About",   '#' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Blog",   '#' %>
+      </li>
+      <li class="nav-item">
+       <%= link_to "Contact",   '#' %>
+      </li>
+    </ul>
+  </div>
+
+  <nav class="navbar navbar-light bg-white">
+  <form class="form-inline">
+      <%=link_to"Sign up", signup_path, class: "btn btn-outline-warning mx-2" %>
+	    
+	    <button class="btn btn-outline-warning mx-2" type="button">Login</button>
+   </form>
+</nav>
+	<div class="icon">
+	<i class="fab fa-twitter"></i>
+	<i class="fab fa-facebook-square"></i>
+	<i class="fab fa-instagram"></i>
+	</div>
+</nav>
+</div>
+<!--end navbar-->
+<h1>Sign up</h1>
+<% provide(:title, 'Sign up') %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@user) do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation %>
+
+      <%= f.submit "Create my account", class: "btn btn-warning" %>
+    <% end %>
+  </div>
+</div>
+
+<!--footer start-->
+
+<div class="footer">	
+		<div class="container">
+			<div class="row">
+				<div class="col-4">
+					<div class="footer-logo">
+					    <%= image_tag'logo2gray.png', :size =>'140x40' %>
+				
+					</div>
+			    </div>
+		    </div>
+		    
+		    <div class="row">
+             <div class="col-12 text-center">
+             	<nav id="fotter-menu1">
+						<ul style="list-style: none;">
+						<li><%= link_to "Top", '#' %></li>
+						<li><%= link_to "Blog", '#' %></li>
+						<li><%= link_to "Contact", '#' %></li>
+						<hr>
+						 <li>
+							<a href="#"><i class="fab fa-twitter"></i></a>
+							<a href="#"><i class="fab fa-facebook-square"></i></a>
+							<a href="#"><i class="fab fa-instagram"></i></a>
+						</li>
+						<li> &copy; YumikoTezuka.</li>
+						</ul>
+					    </nav>
+	             </div>
+		      </div>
+			</div>
+		</div>
+     
+<!--footer end-->
+　<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+ 
+
+	
+	</body>
+	</html>
