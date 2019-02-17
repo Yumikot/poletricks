@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'tricks/new'
   get 'sessions/new'
   get 'users/new'
   root 'top#index'
@@ -10,4 +11,5 @@ Rails.application.routes.draw do
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
   resources :users
+  resources :tricks
  end
