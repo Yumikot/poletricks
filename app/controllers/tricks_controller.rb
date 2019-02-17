@@ -14,7 +14,7 @@ class TricksController < ApplicationController
   end
   
   def index
-    @trick = Trick.all
+    @tricks = Trick.all
   end
   
   
