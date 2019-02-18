@@ -1,20 +1,19 @@
 class TricksController < ApplicationController
+  def index
+    @tricks = Trick.all
+  end
+  
   def new
   end
   
   def create
     @trick = Trick.new(trick_params)
     @trick.save
-    redirect_to @trick
+    redirect_to trick_path(@trick)
   end
   
   def show
-    @trick = Trick.find(params[:id])
-    
-  end
-  
-  def index
-    @tricks = Trick.all
+    @trick = Trick.find params[:id]
   end
   
   

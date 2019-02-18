@@ -83,26 +83,34 @@
 /*profile*/
 .profile{
 	text-align: center;
+	
+}
+.style_image{
+	border-radius:50%;
 }
 .u-ki{
 	padding-top: 20px;
 	padding-bottom: 20px;
 	width: 150px;
 	height: 190px;
-	border-radius: 50%;	
+
 }
 
 .profile p{
 	color:black;
+}
+.card-text{
+	color:black;
+}
+.jumbotron-expand5{
+	margin-top:20px;
 }
 /*trickpage*/
 .tricks{
 	margin-bottom: 20px;
 	margin-top: 10px;
 }
-.pagenate{
-	padding-right: 30px;
-}
+
 
 /*trickspage*/
 .jumbotron-extend3{

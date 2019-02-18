@@ -40,7 +40,6 @@
 <div class="row">
     <div class="col-sm mt-3">
       <div class="card" style="width: 18rem;">
-       
         <%=image_tag'oanak.jpg', :size =>'287x200' %>
           <div class="card-body">
             <h5 class="card-title">IroneX</a></h5>
@@ -73,7 +72,7 @@
 <div class="about">
 	<div class="jumbotron jumbotron-extend2">
 	  <h3>About</h3>
-	  <%= image_tag'street.jpg', :size => '200x200' %>
+	  <%= image_tag'street.jpg', :size => '200x200',:class => "style_image" %>
 	  
 	  <p class="lead">技の名前やイメージを簡単に検索できたらいいな</p>
 	  <p>自分がどれだけできるようになったのか可視化できたら面白いな</p>
@@ -92,7 +91,7 @@
 				<div class="col-sm mt-3">
 					<p class="card-text">1.やって見たい技を探します</p>
 					<div class="card" style="width: 18rem;">
-					  
+					  <%=image_tag'iciran.png', :size =>'287x200' %>
 				    </div>
 				 </div>
 				 <div class="col-sm mt-3">
@@ -105,16 +104,17 @@
 				 <div class="col-sm mt-3">
 				 	<p class="card-text">3.できた技にチェックを入れます。</p>
 					<div class="card" style="width: 18rem;">
-					  <img src="img/check.png" class="card-img-top" alt="star">
+						 <%=image_tag'check.png', :size =>'287x200' %>
 					</div>
 				 </div>
 	</div>
 </div>
+
 <!--howto end-->
 <!--cta start-->
-<div class="cta">
-<div class="jumbotron">
-	
+
+<div class="jumbotron jumbotron-expand5">
+	<div class="container">
   <h1 class="lets">さあトリックをマスターしましょう!</h1>
   
    <%=link_to"無料ではじめる", signup_path, class: "btn-cta btn-warning btn-lg" %>
@@ -125,7 +125,9 @@
 
 <div class="profile">
 <h3>profile</h3>
-<%=image_tag'mukashi.jpg', :size => '100x100' %>
+<div class="photo">
+<%=image_tag'mukashi.jpg', :size => '100x100', :class => "style_image" %>
+</div>
 <h3>開発者:Yumiko Tezuka(U-ki)</h3>
 <p>ポールダンサー・エアリアリスト</p>
 <p>ポールダンスやエアリアルのショーを日本全国津々浦々で行なっています。</p>

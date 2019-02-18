@@ -1,4 +1,54 @@
-<h1>index</h1>
+<h3 class="text-center">トリックをマスターしよう！</h3>
+  
+    <div class="container">
+          
+    <!--search-->
+            <div class="row">
+                 <div class="col-6">
+                    <form class="form-inline">
+                        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Filter by</label>
+                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                              <option selected>Choose...</option>
+                              <option value="1">Strength</option>
+                              <option value="2">flexibility</option>
+                              <option value="3">other</option>
+                            </select>
+                        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Level</label>
+                          <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                          <option selected>Choose...</option>
+                          <option value="1">Beginner</option>
+                          <option value="2">Intermidiate</option>
+                          <option value="3">Advanced</option>
+                          </select>
+                  
+                        <button type="submit" class="btn btn-primary my-1">Submit</button>
+                    </form>
+                </div>
+                <div class="col-6">
+                    <h3>現在の達成度:  %</h3>
+                    <h4>comment</h4>
+                </div>
+            </div>
+         </div>
+      
+
+
+<div class="container">
+
+
+<div class="row">
 <% @tricks.each do |trick| %>
-    <%= @trick.title %>
+
+    <div class="col-sm mt-3">
+      <div class="card" style="width: 18rem;">
+       <iframe width="280" height="200" src="<%= trick.video %>"
+   frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" ></iframe>
+          <div class="card-body">
+            <h5 class="card-title"><%= trick.title %></h5>
+          </div>
+      </div>
+      </div>
+   
 <% end %>
+ </div>
+</div>
