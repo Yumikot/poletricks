@@ -3,10 +3,10 @@
 <div class ="container">
     <h1>新規投稿</h1>
     <%= form_for :trick, url:tricks_path do |f| %>
-    <%=f.label :title %><br>
-    <%=f.text_field :title %>
-    <%=f.label :video %><br>
-    <%=f.text_field :video %>
+        <%=f.label :title %><br>
+        <%=f.text_field :title %>
+        <%=f.label :video_id %><br>
+        <%=f.text_field :video_id %>
     <p></p>
     <p>
         <%=f.submit %>

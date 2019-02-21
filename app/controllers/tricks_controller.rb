@@ -20,7 +20,7 @@ class TricksController < ApplicationController
   
   private
   def trick_params
-    params.require(:trick).permit(:title, :image, :video)
+    params.require(:trick).permit(:title, :image, :video, :video_id)
   end
   
   
