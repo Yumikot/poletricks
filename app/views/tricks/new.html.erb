@@ -1,7 +1,10 @@
 
 <div class="jumbotron">
 <div class ="container">
+<div class="row">
+  <div class="col-md-6 offset-md-3">
     <h1>新規投稿</h1>
+    
     <%= form_for :trick, url:tricks_path do |f| %>
         <%=f.label :title %><br>
         <%=f.text_field :title %>
@@ -12,5 +15,7 @@
         <%=f.submit %>
     </p>
     <% end %>
+</div>
+</div>
 </div>
 </div>

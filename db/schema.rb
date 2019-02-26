@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_20_032742) do
+ActiveRecord::Schema.define(version: 2019_02_26_005048) do
+
+  create_table "likes", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "trick_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "tricks", force: :cascade do |t|
     t.string "title"
@@ -21,11 +28,21 @@ ActiveRecord::Schema.define(version: 2019_02_20_032742) do
     t.string "video_id"
   end
 
+  create_table "user_tricks", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "trick_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["trick_id"], name: "index_user_tricks_on_trick_id"
+    t.index ["user_id"], name: "index_user_tricks_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
   end
 
 end

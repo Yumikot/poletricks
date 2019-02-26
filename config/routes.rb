@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'usertricks/create'
+  get 'usertricks/destroy'
   get 'tricks/new'
   get 'sessions/new'
   get 'users/new'
@@ -10,6 +12,11 @@ Rails.application.routes.draw do
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
+  post 'likes/:trick_id/create' =>'likes#create'
+  post 'likes/:trick_id/destroy' =>'likes#destroy'
   resources :users
-  resources :tricks
+  resources :tricks do
+   resources :usertricks, only: [:create, :destroy]
+   
+  end
  end

@@ -1,5 +1,15 @@
 
 
+/* mixins, variables, etc. */
+
+$gray-medium-light: #eaeaea;
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
 .logop{
 	margin-right: 30px;
 
@@ -13,6 +23,11 @@
 .icon{
 	padding-right: 40px;
 }
+
+#text1{
+	color:black;
+}
+
 
 .jumbotron-extend{
  background-image: image-url("background.png");
@@ -30,7 +45,9 @@
 	text-align: center;
 	margin-bottom:0;
 }
-
+.loginpage{
+    text-align:center;
+}
 
 /*動画*/
 .row{
@@ -152,6 +169,12 @@
 }
 .jumbotron-extend4 h1 {
 	color:white;
+}
+.fa-square{
+	padding-left:30px;
+}
+.fa-check-square{
+	padding-left:30px;
 }
 /*関連動画*/
 

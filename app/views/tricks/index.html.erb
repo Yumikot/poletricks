@@ -1,28 +1,34 @@
 <div class="jumbotron jumbotron-extend4">
-
     <div class="container">
           <h1 class="text-center">トリックをマスターしよう！</h1>
-  
-           
                 <div class="col-12">
                     <h4 class="text-center text-white">現在の達成度:  %</h4>
-                   
                 </div>
-</div>
+     </div>
 </div>
 
 <div class="container">
-<div class="row">
-<% @tricks.each do |trick| %>
-    <div class="col-sm mt-3">
-      <div class="card" style="width: 18rem;">
-      
-       <img src="http://img.youtube.com/vi/<%= trick.video_id %>/mqdefault.jpg" />
-          <div class="card-body">
-            <h5 class="card-title"><%= link_to trick.title, trick %></h5>
-          </div>
+ <div class="row">
+    <% @tricks.each do |trick| %>
+      <div class="col-sm mt-3">
+        <div class="card" style="width: 18rem;">
+           <img src="http://img.youtube.com/vi/<%= trick.video_id %>/mqdefault.jpg" />
+              <div class="card-body">
+                     <h5 class="card-title"><%= link_to trick.title, trick %></h5>
+                    <% if Like.find_by(user_id: @current_user.id, trick_id: @trick.id) %>
+          <!-- いいねされている時 -->
+                      <a href="javascript:void(0)" trick_id="<%= @trick.id %>" class="like_btn">
+                       <i btn="like" class="fas fa-heart like"></i>
+                      </a>
+                    <% else %>
+         <!-- いいねされていない時 -->
+                  <a href="javascript:void(0)" trick_id="<%= @trick.id %>" class="like_btn">
+                  <i btn="unlike" class="far fa-heart unlike"></i>
+                  </a>
+                  <% end %>
+               </div>
+       </div>
       </div>
-      </div>
-<% end %>
+    <% end %>
  </div>
 </div>
