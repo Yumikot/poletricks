@@ -16,7 +16,8 @@ Rails.application.routes.draw do
   post 'likes/:trick_id/destroy' =>'likes#destroy'
   resources :users
   resources :tricks do
-   resources :usertricks, only: [:create, :destroy]
+  resources :usertricks, only: [:create, :destroy]
+  resources :likes, only: [:create, :destroy]
    
   end
  end

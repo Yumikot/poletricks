@@ -6,5 +6,6 @@ class User < ApplicationRecord
                      uniqueness: true
   has_many :tricks
   has_many :user_tricks, dependent: :destroy
+  has_many :likes, dependent: :destroy
   has_secure_password
 end

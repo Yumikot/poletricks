@@ -15,17 +15,6 @@
            <img src="http://img.youtube.com/vi/<%= trick.video_id %>/mqdefault.jpg" />
               <div class="card-body">
                      <h5 class="card-title"><%= link_to trick.title, trick %></h5>
-                    <% if Like.find_by(user_id: @current_user.id, trick_id: @trick.id) %>
-          <!-- いいねされている時 -->
-                      <a href="javascript:void(0)" trick_id="<%= @trick.id %>" class="like_btn">
-                       <i btn="like" class="fas fa-heart like"></i>
-                      </a>
-                    <% else %>
-         <!-- いいねされていない時 -->
-                  <a href="javascript:void(0)" trick_id="<%= @trick.id %>" class="like_btn">
-                  <i btn="unlike" class="far fa-heart unlike"></i>
-                  </a>
-                  <% end %>
                </div>
        </div>
       </div>
