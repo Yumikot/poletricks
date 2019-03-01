@@ -1,7 +1,7 @@
 class Trick < ApplicationRecord
     belongs_to :user
     has_many :user_tricks, dependent: :destroy
-    has_many :likes, dependent: :destroy
+   
     
     def like(user)
         usertricks.create(user_id:user.id)
