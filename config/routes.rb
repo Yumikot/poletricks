@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
- 
   get 'tricks/new'
   get 'sessions/new'
   get 'users/new'
@@ -14,6 +13,6 @@ Rails.application.routes.draw do
   
   resources :users
   resources :tricks do
-     resources :user_tricks, only: [:create, :destroy]  # 
+     resources :user_tricks, only: [:create, :destroy]  
   end
  end
