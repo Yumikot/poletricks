@@ -9,7 +9,7 @@ class TricksController < ApplicationController
   def create
     @trick = Trick.new(trick_params)
     @trick.save
-    redirect_to trick_path(@trick)
+    redirect_to tricks_path(@trick)
   end
   
   def show
