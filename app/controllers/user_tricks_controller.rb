@@ -1,6 +1,5 @@
 class UserTricksController < ApplicationController
-  # before_action :authenticate_user!
-  # before_action :logged_in_user
+  before_action :authenticate_user!
   before_action :set_trick
   def create
     @usertrick = current_user.user_tricks.create(trick: @trick)
@@ -8,8 +7,8 @@ class UserTricksController < ApplicationController
   end
 
   def destroy
-    usertrick= UserTrick.find_by(user_id: current_user.id, trick_id: params[:trick_id])
-    usertrick.destroy
+    user_trick= UserTrick.find_by(user_id: current_user.id, trick_id: params[:trick_id])
+    user_trick.destroy
     @trick = UserTrick.find(params[:trick_id])
     @trick.unlike(current_user)
   end

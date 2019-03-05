@@ -13,7 +13,7 @@
       <div class="col-sm mt-3">
         <div class="card" style="width: 18rem;">
           <img src="http://img.youtube.com/vi/<%= trick.video_id %>/mqdefault.jpg" />
-          <div class="card-body <%= check_user_trick(trick) %>">
+          <div class="card-body <%= check_user_trick(trick) if user_signed_in? %>"> 
             <h5 class="card-title"><%= link_to trick.title, trick %></h5>
             <%= link_to "masterした！", trick_user_tricks_path(trick), method: :post, class: 'btn btn-primary' %>
           </div>

@@ -4,6 +4,7 @@ class TricksController < ApplicationController
   end
   
   def new
+    @trick = Trick.new
   end
   
   def create
@@ -14,6 +15,7 @@ class TricksController < ApplicationController
   
   def show
     @trick = Trick.find params[:id]
+  
   end
   
   private

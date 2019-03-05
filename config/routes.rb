@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'tricks/new'
-  get 'sessions/new'
-  get 'users/new'
   root 'top#index'
-  get 'signup'  => 'users#new'
   get 'mytricks_pages/index'
   get 'videos/index'
    
