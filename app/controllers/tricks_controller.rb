@@ -1,4 +1,5 @@
 class TricksController < ApplicationController
+  before_action:authenticate_user!
   def index
     @tricks = Trick.all
   end
