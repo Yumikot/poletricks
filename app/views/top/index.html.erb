@@ -12,7 +12,7 @@
 </head>
 <body>
 	<% if user_signed_in? %>
-	<h2>こんにちは！<%=link_to"動画一覧ページに移動する",tricks_path %></h2>
+	<h2>こんにちは<%=link_to"動画一覧ページに移動する",tricks_path %></h2>
 	<% end %>
 <!--main start-->
 <div class="jumbotron jumbotron-extend">
@@ -42,7 +42,7 @@
       <div class="card" style="width: 18rem;">
         <%=image_tag'ironex.jpg', :size =>'287x200' %>
           <div class="card-body">
-            <h5 class="card-title">IroneX</a></h5>
+            <h5 class="card-title"><%=link_to"IroneX","#" %></h5>
           </div>
       </div>
     </div>
@@ -50,7 +50,7 @@
       <div class="card" style="width: 18rem;">
         <%=image_tag'russian.png', :size =>'287x200' %>
            <div class="card-body">
-             <h5 class="card-title">Russian sprit</h5>
+             <h5 class="card-title"><%=link_to"Russian sprit" %></h5>
            </div>
       </div>
     </div>
@@ -58,7 +58,7 @@
       <div class="card" style="width: 18rem;">
       <%=image_tag'oanak.jpg', :size =>'287x200' %>
           <div class="card-body">
-            <h5 class="card-title">OanaK</h5>
+            <h5 class="card-title"><%=link_to"OanaK" %></h5>
           </div>
       </div>
      </div>

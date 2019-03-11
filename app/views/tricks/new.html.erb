@@ -4,14 +4,19 @@
 <div class="row">
   <div class="col-md-6 offset-md-3">
     <h1>新規投稿</h1>
-    
     <%= form_for :trick, url:tricks_path do |f| %>
         <%=f.label :title %><br>
         <%=f.text_field :title %>
         <%=f.label :video_id %><br>
         <%=f.text_field :video_id %>
+        
+        <%= field_set_tag 'Category' do %>
+        <%= text_field_tag 'category_name' %>
+        <% end %>
+       
+       
+
     <p></p>
-    <p>
         <%=f.submit %>
     </p>
     <% end %>

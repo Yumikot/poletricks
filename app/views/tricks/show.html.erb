@@ -4,64 +4,55 @@
     <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @trick.video_id %>" 
     frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <h1><%= @trick.title %></h1>
+    <h3> @category.category_name ここにカテゴリー入る？</h3>
    <p></p>
 　　　</div>
 　　　
 </div>
-<div class="container">
-  <div class="row">
-      <div class="col-10 mb-2">
-        <h3 class="text-center">トリック動画を保存しよう</h3>
-      </div>
-      <div class="col-2 mb-2">
-         <button type="submit" class="btn btn-primary">Complete!</button>
-      </div>
-      
-      </div>
+
 <div class="jumbotron jumbotron-extend5">
   <div class="container">
-   
-    </div>
-  <form class="comment">
-    <div class="form-group">
-    <label for="exampleFormControlTextarea1">Comment</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-  </div>
-      <button type="submit" class="btn btn-danger mb-2">Submit</button>
+     <div class="row">
+       <div class="col-md-6 offset-md-3">
+       <form class="comment">
+         <h2>Comment</h2>
+          
+    <% @trick.comments.each do |comment| %>
+    <p><%= comment.body %></p>
+    <p><%= comment.commenter %></p>
+    <% end %>
+  
+    <%= form_for ([@trick, @trick.comments.build])do |f| %>
+    <p><%= f.label :Commnt %></p>
+    <p><%= f.text_area :body %></p>
+    <p><%=f.label :commenter %></p>
+    <p><%= f.text_field :commenter %></p>
+     <%= f.submit %>
+     <% end %>
+ 
+     
   </form>
   </div>
   </div>
   </div>
+  </div>
+
 <!--related videos-->
 <div class="container">
  <div class="relation">
     <h3>-related video-</h3>
   </div>
     <div class="row">
+      
         <div class="col-sm mt-3">
           <div class="card" style="width: 18rem;">
-            <img src="img/oanak.jpg" class="card-img-top" alt="...">
+          
               <div class="card-body">
-                <h5 class="card-title">Russian sprit</h5>
+                <h5 class="card-title">#</h5>
               </div>
           </div>
         </div>
-      <div class="col-sm mt-3">
-          <div class="card" style="width: 18rem;">
-             <img src="img/oanak.jpg" class="card-img-top" alt="...">
-               <div class="card-body">
-                 <h5 class="card-title">Russian sprit</h5>
-       
-               </div>
-          </div>
-        </div>
-        <div class="col-sm mt-3">
-          <div class="card" style="width: 18rem;">
-           <img src="img/oanak.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">OanaK</h5>
-              </div>
-          </div>
-         </div>
-  </div>
+      
+    </div>
+    </div>
 </div>

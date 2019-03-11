@@ -10,8 +10,11 @@ class TricksController < ApplicationController
   
   def create
     @trick = Trick.new(trick_params)
-    @trick.save
+    if @trick.save
     redirect_to trick_path(@trick)
+   else
+     render 'new'
+   end
   end
   
   def show
@@ -21,8 +24,9 @@ class TricksController < ApplicationController
   
   private
   def trick_params
-    params.require(:trick).permit(:title, :image, :video, :video_id)
+    params.require(:trick).permit(:title, :image, :video, :video_id, :category_id, :category_name)
   end
   
-  
 end
+  
+

@@ -13,4 +13,7 @@ Rails.application.routes.draw do
   resources :tricks do
      resources :user_tricks, only: [:create, :destroy]  
   end
+  resources :tricks do
+    resources :comments
+  end
  end
