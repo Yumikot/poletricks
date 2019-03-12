@@ -2,11 +2,14 @@
     <div class="container">
           <h1 class="text-center">トリックをマスターしよう！</h1>
                 <div class="col-12">
-                    <h4 class="text-center text-white">現在の達成度:  %</h4>
+                    <h4 class="text-center text-white">現在の達成度:  %
+                    Trick総数: <%= Trick.all.size %>
+                    UserTrick総数<%= current_user.user_tricks.size %>
+                    </h4>
+                    
                 </div>
      </div>
 </div>
-
 <div class="container">
  <div class="row">
     <% @tricks.each do |trick| %>
@@ -15,8 +18,11 @@
           <img src="http://img.youtube.com/vi/<%= trick.video_id %>/mqdefault.jpg" />
           <div class="card-body <%= check_user_trick(trick) if user_signed_in? %>"> 
             <h5 class="card-title"><%= link_to trick.title, trick %></h5>
-           category_name
             <%= link_to "master！", trick_user_tricks_path(trick), method: :post, class: 'btn btn-primary' %>
+            <% trick.categories.each do |category| %>
+            <span class="badge badge-secondary"><%= category.category_name %></span>
+                
+            <% end %>
           </div>
        </div>
       </div>

@@ -4,55 +4,64 @@
     <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @trick.video_id %>" 
     frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <h1><%= @trick.title %></h1>
-    <h3> @category.category_name ここにカテゴリー入る？</h3>
+   
    <p></p>
 　　　</div>
 　　　
 </div>
-
 <div class="jumbotron jumbotron-extend5">
   <div class="container">
      <div class="row">
        <div class="col-md-6 offset-md-3">
        <form class="comment">
          <h2>Comment</h2>
-          
-    <% @trick.comments.each do |comment| %>
-    <p><%= comment.body %></p>
-    <p><%= comment.commenter %></p>
-    <% end %>
-  
-    <%= form_for ([@trick, @trick.comments.build])do |f| %>
-    <p><%= f.label :Commnt %></p>
-    <p><%= f.text_area :body %></p>
-    <p><%=f.label :commenter %></p>
-    <p><%= f.text_field :commenter %></p>
-     <%= f.submit %>
-     <% end %>
- 
-     
-  </form>
+        <% @trick.comments.each do |comment| %>
+            <%= comment.body %>
+                <%= link_to "destroy comment",[comment.trick, comment],
+                method: :delete,
+                data: {confirm: 'Are you sure?'} %>
+        <% end %>
+        <%= form_for ([@trick, @trick.comments.build]) do |f| %>
+            <h3><%= f.label :Comment %></h3>
+            <p><%= f.text_area :body %></p>
+            <%= f.submit %>
+        <% end %>
+       </form>
+       </div>
+     </div>
   </div>
-  </div>
-  </div>
-  </div>
+ </div>
 
 <!--related videos-->
 <div class="container">
  <div class="relation">
     <h3>-related video-</h3>
   </div>
+  
     <div class="row">
-      
         <div class="col-sm mt-3">
-          <div class="card" style="width: 18rem;">
-          
-              <div class="card-body">
-                <h5 class="card-title">#</h5>
-              </div>
-          </div>
+            <div class="card" style="width: 18rem;">
+               <img src="#">
+                <div class="card-body"> 
+            　　　　<h5 class="card-title"></h5>
+          　　　　</div>
+            </div>
         </div>
-      
-    </div>
-    </div>
+            <div class="col-sm mt-3">
+             <div class="card" style="width: 18rem;">
+               <img src="#">
+                <div class="card-body"> 
+            　　　　<h5 class="card-title"></h5>
+          　　　　</div>
+             </div>
+            </div>
+            <div class="col-sm mt-3">
+               <div class="card" style="width: 18rem;">
+                 <img src="#">
+                   <div class="card-body"> 
+            　　　　<h5 class="card-title"></h5>
+          　　    　　</div>
+                </div>
+             </div>
+          </div>
 </div>
