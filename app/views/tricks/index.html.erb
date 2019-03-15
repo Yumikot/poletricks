@@ -2,11 +2,10 @@
     <div class="container">
           <h1 class="text-center">トリックをマスターしよう！</h1>
                 <div class="col-12">
-                    <h4 class="text-center text-white">現在の達成度:  %
-                    Trick総数: <%= Trick.all.size %>
-                    UserTrick総数<%= current_user.user_tricks.size %>
+                    <h4 class="text-center text-white">現在の達成度: <%= current_user.user_tricks.size %>/<%= Trick.all.size %>
                     </h4>
-                    
+                    <h5 class="text-center text-white">Trick総数: <%= Trick.all.size %>
+                    UserTrick総数<%= current_user.user_tricks.size %></h5>
                 </div>
      </div>
 </div>

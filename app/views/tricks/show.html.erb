@@ -13,20 +13,20 @@
   <div class="container">
      <div class="row">
        <div class="col-md-6 offset-md-3">
-       <form class="comment">
+           
          <h2>Comment</h2>
-        <% @trick.comments.each do |comment| %>
-            <%= comment.body %>
-                <%= link_to "destroy comment",[comment.trick, comment],
-                method: :delete,
-                data: {confirm: 'Are you sure?'} %>
-        <% end %>
+       
+           <% @trick.comments.each do |comment| %>
+            　　<h5><%= comment.body %></h5>
+           <% end %> 
+      
         <%= form_for ([@trick, @trick.comments.build]) do |f| %>
             <h3><%= f.label :Comment %></h3>
             <p><%= f.text_area :body %></p>
-            <%= f.submit %>
+            <%= f.submit :submit %>
         <% end %>
-       </form>
+       
+       
        </div>
      </div>
   </div>

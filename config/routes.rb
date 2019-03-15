@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
   
-  resources :users
+  resources :users do
+    resources :comments
+  end
   resources :tricks do
      resources :user_tricks, only: [:create, :destroy]  
   end

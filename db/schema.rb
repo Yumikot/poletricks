@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_11_054632) do
+ActiveRecord::Schema.define(version: 2019_03_14_124817) do
 
   create_table "categories", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 2019_03_11_054632) do
     t.integer "trick_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
     t.index ["trick_id"], name: "index_comments_on_trick_id"
   end
 
@@ -43,6 +44,7 @@ ActiveRecord::Schema.define(version: 2019_03_11_054632) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "video_id"
+    t.string "user_id"
   end
 
   create_table "user_tricks", force: :cascade do |t|

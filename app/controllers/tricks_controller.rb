@@ -1,5 +1,5 @@
 class TricksController < ApplicationController
-  before_action:authenticate_user!
+  before_action:authenticate_user!, only: [:show, :create]
   def index
     @tricks = Trick.all
   end
@@ -12,21 +12,20 @@ class TricksController < ApplicationController
     @trick = Trick.new(trick_params)
     if @trick.save
     redirect_to trick_path(@trick)
-   else
+    else
      render 'new'
-   end
+    end
   end
   
   def show
-    @trick = Trick.find params[:id]
-  
+    @trick = Trick.includes(:user).find(params[:id])
+    
   end
   
   private
   def trick_params
-    params.require(:trick).permit(:title, :image, :video, :video_id, :category_id, :category_name)
+    params.require(:trick).permit(:title, :image, :video, :video_id, :category_id, :category_name, :user_id)
   end
-  
 end
   
 

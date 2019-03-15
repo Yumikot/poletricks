@@ -1,9 +1,14 @@
 class CommentsController < ApplicationController
     def create
-        raise params.inspect
         @trick = Trick.find params[:trick_id]
-        @comment = @trick.comments.create(comment_params)
-        redirect_to trick_path(@trick)
+        # @trick.comments.create(comment_params)
+        @comment = @trick.comments.build(comment_params)
+         @comment.user = current_user
+            if @comment.save
+              redirect_to trick_path(@trick)
+            else
+              render "tricks/show"
+            end
     end
     
     def destroy
@@ -13,8 +18,8 @@ class CommentsController < ApplicationController
         redirect_to trick_path(@trick)
     end
     
- private
-    def comment_params
-      params.require(:comment).permit(:body)
-    end
+private
+  def comment_params
+    params.require(:comment).permit(:body, :user_id, :trick_id)
+  end
 end
