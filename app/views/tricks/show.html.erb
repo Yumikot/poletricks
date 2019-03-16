@@ -17,15 +17,20 @@
          <h2>Comment</h2>
        
            <% @trick.comments.each do |comment| %>
+           <div class="row">
             　　<h5><%= comment.body %></h5>
+            　　<button type="button" class="btn btn-link btn-xs"><%= link_to 'コメントを削除する',trick_comment_path(@trick,comment), method: :delete %></button>
+           <hr>
+           </div>
            <% end %> 
-      
+      <hr>
         <%= form_for ([@trick, @trick.comments.build]) do |f| %>
-            <h3><%= f.label :Comment %></h3>
+            
             <p><%= f.text_area :body %></p>
-            <%= f.submit :submit %>
+            <%= f.submit :書き込む %>
         <% end %>
-       
+        <p></p>
+       <h5><%=link_to"動画一覧に戻る",tricks_path %></h5>
        
        </div>
      </div>

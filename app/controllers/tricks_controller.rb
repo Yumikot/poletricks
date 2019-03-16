@@ -6,6 +6,7 @@ class TricksController < ApplicationController
   
   def new
     @trick = Trick.new
+   
   end
   
   def create
@@ -24,7 +25,7 @@ class TricksController < ApplicationController
   
   private
   def trick_params
-    params.require(:trick).permit(:title, :image, :video, :video_id, :category_id, :category_name, :user_id)
+    params.require(:trick).permit(:title, :image, :video, :video_id, :user_id,{ :category_ids=> [] })
   end
 end
   

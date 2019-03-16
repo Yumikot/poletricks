@@ -9,16 +9,15 @@
         <%=f.text_field :title %>
         <%=f.label :video_id %><br>
         <%=f.text_field :video_id %>
-        
-        <%= field_set_tag 'Category' do %>
-        <%= text_field_tag 'category_name' %>
-        <% end %>
-       
-       
 
+        <%= form_for @trick do |f| %>
+          <%= f.label :category_id %>
+          <%= f.collection_select :category_ids, Category.all, :id, :category_name %>
+        <%- end -%>
+  
     <p></p>
         <%=f.submit %>
-    </p>
+  
     <% end %>
 </div>
 </div>
