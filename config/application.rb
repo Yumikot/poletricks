@@ -16,8 +16,8 @@ module Poletricks
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
     ActiveRecord::Base.protected_environments = %w(production staging)
-    config.web_console.whitelisted_ips = '219.100.29.97'
-    config.web_console.whiny_requests = false
+    # config.web_console.whitelisted_ips = '219.100.29.97'
+    # config.web_console.whiny_requests = false
    
   end
 end
