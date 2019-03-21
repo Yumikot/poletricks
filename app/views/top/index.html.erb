@@ -10,9 +10,7 @@
 	<link rel="stylesheet" href="stylesheets/top.scss">
 
 </head>
-
 <body>
-	<!--nav bar start-->
 
 <!--main start-->
 <div class="jumbotron jumbotron-extend">
@@ -24,7 +22,7 @@
 	 </div>
 	  <p>Let's get started!</p>
 	  <div class="caption">
-	      <%=link_to"create your account", signup_path, class: "btn btn-warning btn-lg" %>
+	      <%=link_to"create your account", new_user_registration_path, class: "btn btn-warning btn-lg" %>
   	  </div>
   </div>
  </div>
@@ -40,17 +38,17 @@
 <div class="row">
     <div class="col-sm mt-3">
       <div class="card" style="width: 18rem;">
-        <%=image_tag'oanak.jpg', :size =>'287x200' %>
+        <%=image_tag'ironex.jpg', :size =>'287x200' %>
           <div class="card-body">
-            <h5 class="card-title">IroneX</a></h5>
+            <h5 class="card-title"><%=link_to"IroneX",'https://youtu.be/Kj2DkYYEpJ0',:target => "_blank" %></h5>
           </div>
       </div>
     </div>
   <div class="col-sm mt-3">
       <div class="card" style="width: 18rem;">
-        <%=image_tag'oanak.jpg', :size =>'287x200' %>
+        <%=image_tag'russian.png', :size =>'287x200' %>
            <div class="card-body">
-             <h5 class="card-title">Russian sprit</h5>
+             <h5 class="card-title"><%=link_to"Russian sprit",'https://youtu.be/rNZPlN-gWjw',:target => "_blank" %></h5>
            </div>
       </div>
     </div>
@@ -58,7 +56,7 @@
       <div class="card" style="width: 18rem;">
       <%=image_tag'oanak.jpg', :size =>'287x200' %>
           <div class="card-body">
-            <h5 class="card-title">OanaK</h5>
+            <h5 class="card-title"><%=link_to"OanaK",'https://youtu.be/3LcRdeSE_XM',:target => "_blank" %></h5>
           </div>
       </div>
      </div>
@@ -117,7 +115,7 @@
 	<div class="container">
   <h1 class="lets">さあトリックをマスターしましょう!</h1>
   
-   <%=link_to"無料ではじめる", signup_path, class: "btn-cta btn-warning btn-lg" %>
+   <%=link_to"無料ではじめる", new_user_registration_path, class: "btn-cta btn-warning btn-lg" %>
 </div>
 </div>
 <!--cta end-->
@@ -126,7 +124,7 @@
 <div class="profile">
 <h3>profile</h3>
 <div class="photo">
-<%=image_tag'mukashi.jpg', :size => '150x150', :class => "style_image" %>
+<%=image_tag'mukashi.jpg', :size => '150x180', :class => "style_image" %>
 </div>
 <h3>開発者:Yumiko Tezuka(U-ki)</h3>
 <p>ポールダンサー・エアリアリスト</p>

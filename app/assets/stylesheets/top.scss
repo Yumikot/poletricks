@@ -1,5 +1,15 @@
 
 
+/* mixins, variables, etc. */
+
+$gray-medium-light: #eaeaea;
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
 .logop{
 	margin-right: 30px;
 
@@ -14,9 +24,15 @@
 	padding-right: 40px;
 }
 
+#text1{
+	color:black;
+}
+
+
 .jumbotron-extend{
- background-image: image-url("background.png");
- background-size: cover;
+ background-image: image-url("reda.png");
+ 
+ background-size:contain;
 }
 
 .jumbotron-extend h1,h2,p{
@@ -30,7 +46,9 @@
 	text-align: center;
 	margin-bottom:0;
 }
-
+.loginpage{
+    text-align:center;
+}
 
 /*動画*/
 .row{
@@ -153,6 +171,7 @@
 .jumbotron-extend4 h1 {
 	color:white;
 }
+
 /*関連動画*/
 
 .relation{
@@ -184,4 +203,16 @@ input, textarea, select, .uneditable-input {
  input {
   height: auto !important;
 }
-	
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
+}

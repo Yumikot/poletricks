@@ -48,14 +48,16 @@ Rails.application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
-
+  
   # Suppress logger output for asset requests.
   config.assets.quiet = true
-
+  config.action_controller.forgery_protection_origin_check = false
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+  config.action_mailer.default_url_options = { host: 'poledance-jitenlp-yumiko55.c9users.io' }
+  config.web_console.whitelisted_ips = '219.100.29.97'
 end
