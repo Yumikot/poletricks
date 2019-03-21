@@ -4,7 +4,9 @@
     <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @trick.video_id %>" 
     frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <h1><%= @trick.title %></h1>
-   
+   <% @trick.categories.each do |category| %>
+           <span class="badge badge-secondary"><%= category.category_name %></span>
+   <% end %>
    <p></p>
 　　　</div>
 　　　
@@ -43,30 +45,22 @@
     <h3>-related video-</h3>
   </div>
   
+  
     <div class="row">
-        <div class="col-sm mt-3">
-            <div class="card" style="width: 18rem;">
-               <img src="#">
-                <div class="card-body"> 
-            　　　　<h5 class="card-title"></h5>
-          　　　　</div>
-            </div>
-        </div>
+        <% @category_tricks.each do |category_trick| %>
             <div class="col-sm mt-3">
-             <div class="card" style="width: 18rem;">
-               <img src="#">
-                <div class="card-body"> 
-            　　　　<h5 class="card-title"></h5>
-          　　　　</div>
-             </div>
-            </div>
-            <div class="col-sm mt-3">
-               <div class="card" style="width: 18rem;">
-                 <img src="#">
-                   <div class="card-body"> 
-            　　　　<h5 class="card-title"></h5>
-          　　    　　</div>
+                <div class="card" style="width: 18rem;">
+                   <img src="http://img.youtube.com/vi/<%=category_trick.trick.video_id %>/mqdefault.jpg" />
+                  
+                    <div class="card-body"> 
+                     <h5 class="text-center"><%= link_to category_trick.trick.title, category_trick.trick %></h5>
+                　　　　
+              　　　　</div>
                 </div>
-             </div>
-          </div>
+            </div>
+         <% end %>
+        
+            
+            
+    </div>
 </div>

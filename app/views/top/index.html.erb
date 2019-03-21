@@ -11,9 +11,7 @@
 
 </head>
 <body>
-	<% if user_signed_in? %>
-	<h2>こんにちは<%=link_to"動画一覧ページに移動する",tricks_path %></h2>
-	<% end %>
+
 <!--main start-->
 <div class="jumbotron jumbotron-extend">
   <div class="container">
@@ -42,7 +40,7 @@
       <div class="card" style="width: 18rem;">
         <%=image_tag'ironex.jpg', :size =>'287x200' %>
           <div class="card-body">
-            <h5 class="card-title"><%=link_to"IroneX","#" %></h5>
+            <h5 class="card-title"><%=link_to"IroneX",'https://youtu.be/Kj2DkYYEpJ0',:target => "_blank" %></h5>
           </div>
       </div>
     </div>
@@ -50,7 +48,7 @@
       <div class="card" style="width: 18rem;">
         <%=image_tag'russian.png', :size =>'287x200' %>
            <div class="card-body">
-             <h5 class="card-title"><%=link_to"Russian sprit" %></h5>
+             <h5 class="card-title"><%=link_to"Russian sprit",'https://youtu.be/rNZPlN-gWjw',:target => "_blank" %></h5>
            </div>
       </div>
     </div>
@@ -58,7 +56,7 @@
       <div class="card" style="width: 18rem;">
       <%=image_tag'oanak.jpg', :size =>'287x200' %>
           <div class="card-body">
-            <h5 class="card-title"><%=link_to"OanaK" %></h5>
+            <h5 class="card-title"><%=link_to"OanaK",'https://youtu.be/3LcRdeSE_XM',:target => "_blank" %></h5>
           </div>
       </div>
      </div>
@@ -126,7 +124,7 @@
 <div class="profile">
 <h3>profile</h3>
 <div class="photo">
-<%=image_tag'mukashi.jpg', :size => '150x150', :class => "style_image" %>
+<%=image_tag'mukashi.jpg', :size => '150x180', :class => "style_image" %>
 </div>
 <h3>開発者:Yumiko Tezuka(U-ki)</h3>
 <p>ポールダンサー・エアリアリスト</p>

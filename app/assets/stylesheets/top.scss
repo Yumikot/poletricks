@@ -30,8 +30,9 @@ $gray-medium-light: #eaeaea;
 
 
 .jumbotron-extend{
- background-image: image-url("background.png");
- background-size: cover;
+ background-image: image-url("reda.png");
+ 
+ background-size:contain;
 }
 
 .jumbotron-extend h1,h2,p{
