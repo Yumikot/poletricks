@@ -1,15 +1,20 @@
 Rails.application.routes.draw do
-  get 'tricks/new'
-  get 'sessions/new'
-  get 'users/new'
+  devise_for :users
   root 'top#index'
-  get 'signup'  => 'users#new'
   get 'mytricks_pages/index'
   get 'videos/index'
    
-  get    'login'   => 'sessions#new'
-  post   'login'   => 'sessions#create'
-  delete 'logout'  => 'sessions#destroy'
-  resources :users
-  resources :tricks
+  # get    'login'   => 'sessions#new'
+  # post   'login'   => 'sessions#create'
+  # delete 'logout'  => 'sessions#destroy'
+  
+  resources :users do
+    resources :comments
+  end
+  resources :tricks do
+    resources :user_tricks, only: [:create, :destroy]  
+  end
+  resources :tricks do
+    resources :comments, only: [:create, :destroy] 
+  end
  end

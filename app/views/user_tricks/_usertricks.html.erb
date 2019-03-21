@@ -1,0 +1,23 @@
+ 
+<% if user_signed_in? %>
+  <% if trick.like_user(current_user.id) %>
+    <%= button_to trick_usetrick_path(usertrick, trick_id: trick.id), method: :delete, id: "like-button", remote: true do %>
+      <%= image_tag("staryellow.png") %>
+      <span>
+        <%= trick.usertrick_count %>
+      </span>
+    <% end %>
+  <% else %>
+    <%= button_to trick_usertricks_path(trick), id: "like-button", remote: true do %>
+      <%= image_tag("staryellow.png") %>
+      <span>
+        <%= trick.usertrick_count %>
+      </span>
+    <% end %>
+  <% end %>
+<% else %>
+  <% = image_tag("starwhite.png") %>
+    <span>
+      <%= trick.usertrick_count %>
+    </span>
+<% end %>

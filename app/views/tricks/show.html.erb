@@ -4,64 +4,63 @@
     <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @trick.video_id %>" 
     frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <h1><%= @trick.title %></h1>
+   <% @trick.categories.each do |category| %>
+           <span class="badge badge-secondary"><%= category.category_name %></span>
+   <% end %>
    <p></p>
 　　　</div>
 　　　
 </div>
-<div class="container">
-  <div class="row">
-      <div class="col-10 mb-2">
-        <h3 class="text-center">トリック動画を保存しよう</h3>
-      </div>
-      <div class="col-2 mb-2">
-         <button type="submit" class="btn btn-primary">Complete!</button>
-      </div>
-      
-      </div>
-<div class="jumbotron jumbotron-extend4">
+<div class="jumbotron jumbotron-extend5">
   <div class="container">
-   
-    </div>
-  <form class="comment">
-    <div class="form-group">
-    <label for="exampleFormControlTextarea1">Comment</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+     <div class="row">
+       <div class="col-md-6 offset-md-3">
+           
+         <h2>Comment</h2>
+       
+           <% @trick.comments.each do |comment| %>
+           <div class="row">
+            　　<h5><%= comment.body %></h5>
+            　　<button type="button" class="btn btn-link btn-xs"><%= link_to 'コメントを削除する',trick_comment_path(@trick,comment), method: :delete %></button>
+           <hr>
+           </div>
+           <% end %> 
+      <hr>
+        <%= form_for ([@trick, @trick.comments.build]) do |f| %>
+            
+            <p><%= f.text_area :body %></p>
+            <%= f.submit :書き込む %>
+        <% end %>
+        <p></p>
+       <h5><%=link_to"動画一覧に戻る",tricks_path %></h5>
+       
+       </div>
+     </div>
   </div>
-      <button type="submit" class="btn btn-danger mb-2">Submit</button>
-  </form>
-  </div>
-  </div>
-  </div>
+ </div>
+
 <!--related videos-->
 <div class="container">
  <div class="relation">
     <h3>-related video-</h3>
   </div>
+  
+  
     <div class="row">
-        <div class="col-sm mt-3">
-          <div class="card" style="width: 18rem;">
-            <img src="img/oanak.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Russian sprit</h5>
-              </div>
-          </div>
-        </div>
-      <div class="col-sm mt-3">
-          <div class="card" style="width: 18rem;">
-             <img src="img/oanak.jpg" class="card-img-top" alt="...">
-               <div class="card-body">
-                 <h5 class="card-title">Russian sprit</h5>
-       
-               </div>
-          </div>
-        </div>
-        <div class="col-sm mt-3">
-          <div class="card" style="width: 18rem;">
-           <img src="img/oanak.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">OanaK</h5>
-              </div>
-          </div>
-         </div>
-  </div>
+        <% @category_tricks.each do |category_trick| %>
+            <div class="col-sm mt-3">
+                <div class="card" style="width: 18rem;">
+                   <img src="http://img.youtube.com/vi/<%=category_trick.trick.video_id %>/mqdefault.jpg" />
+                  
+                    <div class="card-body"> 
+                     <h5 class="text-center"><%= link_to category_trick.trick.title, category_trick.trick %></h5>
+                　　　　
+              　　　　</div>
+                </div>
+            </div>
+         <% end %>
+        
+            
+            
+    </div>
 </div>
