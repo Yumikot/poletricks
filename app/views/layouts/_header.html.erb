@@ -8,52 +8,41 @@
 	<title>Poletricks</title>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 	
-
 </head>
-
-<body>
 	<!--nav bar start-->
-
   <!-- Navbar content -->
-  <div class="container">
- <nav class="navbar navbar-expand-lg navbar-light bg-white">
-    <a href="https://poledance-jitenlp-yumiko55.c9users.io/"><%= image_tag'logo2red.png', :size =>'110x30' %></a>
-  		
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
 
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-       <%= link_to "Top",root_path %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Blog",'http://acro-y.hatenadiary.com/',:target => "_blank" %>
-      </li>
-      <li class="nav-item">
-       <%= link_to "Contact",   '#' %>
-      </li>
-     
-    </ul>
-  </div>
-	<% if user_signed_in? %>
-	 <nav class="navbar navbar-light bg-white">
-         
-	      <%=link_to"マイページ",tricks_path, class: "btn btn-outline-primary mx-2" %>
-            <%= link_to "Log out", destroy_user_session_path, method: "delete", class: "btn btn-outline-danger mx-2" %>
-       <% else %>
-        
-         <%=link_to"Sign up", new_user_registration_path, class: "btn btn-outline-warning mx-2" %>
-          <%=link_to"Log in", new_user_session_path, class: "btn btn-outline-warning mx-2" %>
-          
-    </nav>
-   <% end %>
-	<div class="icon">
-	<a href="#" target = "_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
-	<a href="#" target = "_blank" rel="noopener noreferrer"><i class="fab fa-facebook-square"></i></a>
-		<a href="https://www.instagram.com/u_ki_acropole/" target = "_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-	</div>
-</nav>
-</div>
+     <nav class="navbar navbar-expand-lg navbar-light bg-white">
+         <a href="#"><%= image_tag'logo2red.png', :size =>'110x30' %></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+           <%= link_to "Top",root_path %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Blog",'http://acro-y.hatenadiary.com/',:target => "_blank" %>
+          </li>
+          <li class="nav-item">
+           <%= link_to "Contact",   '#' %>
+          </li>
+        </ul>
+      </div>
+    	<% if user_signed_in? %>
+    	      <%=link_to"マイページ",tricks_path, class: "btn btn-outline-primary mx-2" %>
+                <%= link_to "Log out", destroy_user_session_path, method: "delete", class: "btn btn-outline-danger mx-2" %>
+        <% else %>
+              <%=link_to"Sign up", new_user_registration_path, class: "btn btn-outline-warning mx-2" %>
+              <%=link_to"Log in", new_user_session_path, class: "btn btn-outline-warning mx-2" %>
+       <% end %>
+      
+    	<div class="icon">
+    	<a href="#" target = "_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+    	<a href="#" target = "_blank" rel="noopener noreferrer"><i class="fab fa-facebook-square"></i></a>
+    		<a href="https://www.instagram.com/u_ki_acropole/" target = "_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+    	</div>
+      </nav>
+
 <!--end navbar-->

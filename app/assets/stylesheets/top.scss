@@ -1,5 +1,4 @@
 
-
 /* mixins, variables, etc. */
 
 $gray-medium-light: #eaeaea;
@@ -31,8 +30,8 @@ $gray-medium-light: #eaeaea;
 
 .jumbotron-extend{
  background-image: image-url("reda.png");
- 
- background-size:contain;
+ background-repeat: no-repeat;
+ background-size:cover;
 }
 
 .jumbotron-extend h1,h2,p{
@@ -184,14 +183,7 @@ $gray-medium-light: #eaeaea;
 }
 
 
-.footer{
-	background: #191919;
-	height: 280px;
-	width:100%;
-}
-.footer-logo{
-	float: left;
-}
+
 /* forms */
 
 input, textarea, select, .uneditable-input {
@@ -207,7 +199,7 @@ input, textarea, select, .uneditable-input {
   margin-top: -10px;
   margin-bottom: 10px;
   span {
-    margin-left: 20px;
+   
     font-weight: normal;
   }
 }
@@ -215,4 +207,12 @@ input, textarea, select, .uneditable-input {
 #session_remember_me {
   width: auto;
   margin-left: 0;
+}
+.footer{
+	background: #191919;
+	height: 220px;
+	width:100%;
+}
+.footer-logo{
+	float: left;
 }
