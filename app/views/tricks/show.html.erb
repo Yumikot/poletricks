@@ -1,15 +1,17 @@
+
 <div class="container">
 
     <div class="mainvideo">
+        <div class="video">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @trick.video_id %>" 
     frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
     <h1><%= @trick.title %></h1>
    <% @trick.categories.each do |category| %>
            <span class="badge badge-secondary"><%= category.category_name %></span>
    <% end %>
-   <p></p>
-　　　</div>
-　　　
+   
+</div>　　　
 </div>
 <div class="jumbotron jumbotron-extend5">
   <div class="container">
@@ -42,10 +44,8 @@
 <!--related videos-->
 <div class="container">
  <div class="relation">
-    <h3>-related video-</h3>
+    <h3>-Related videos-</h3>
   </div>
-  
-  
     <div class="row">
         <% @category_tricks.each do |category_trick| %>
             <div class="col-sm mt-3">
