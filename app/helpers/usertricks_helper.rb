@@ -8,4 +8,7 @@ module UsertricksHelper
             ""
         end
     end
+    def get_user_trick(trick)
+        current_user.user_tricks.find_by(trick: trick)
+    end
 end

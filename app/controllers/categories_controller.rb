@@ -9,9 +9,10 @@ class CategoriesController < ApplicationController
     end
     def destroy
     end
-     private
-     def category_params
-         params.require(category).permit(:category_name,:id)
-     end
+    
+    private
+        def category_params
+             params.require(category).permit(:category_name,:id)
+        end
      
 end

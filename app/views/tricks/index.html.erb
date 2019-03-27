@@ -1,25 +1,35 @@
 <div class="jumbotron jumbotron-extend4">
     <div class="container">
+      
           <h1 class="text-center">トリックをマスターしよう！</h1>
                 <div class="col-12">
                     <h4 class="text-center text-white">現在の達成度: <%= current_user.user_tricks.size %>/<%= Trick.all.size %>
                     </h4>
                     <h5 class="text-center text-white">Trick総数: <%= Trick.all.size %>
-                    UserTrick総数<%= current_user.user_tricks.size %></h5>
+                    達成Trick総数<%= current_user.user_tricks.size %></h5>
                 </div>
      </div>
+     
 </div>
+
+
 <div class="container">
  <div class="row">
     <% @tricks.each do |trick| %>
       <div class="col-sm mt-3">
         <div class="card" style="width: 18rem;">
           <img src="http://img.youtube.com/vi/<%= trick.video_id %>/mqdefault.jpg" />
+          
           <div class="card-body <%= check_user_trick(trick) if user_signed_in? %>"> 
             <h5 class="card-title"><%= link_to trick.title, trick %></h5>
-            <%= link_to "master！", trick_user_tricks_path(trick), method: :post, class: 'btn btn-primary' %>
+            <% if check_user_trick(trick) == "master" && user_signed_in? %>
+              <%= link_to "cancel msater", trick_user_trick_path(trick, get_user_trick(trick)), method: :delete, data: {confirm: "本当にキャンセルしますか？"}, class: 'btn btn-secondary' %>
+            <% else %>
+              <%= link_to "master！", trick_user_tricks_path(trick), method: :post, class: 'btn btn-primary' %>
+            <% end %>
+            
             <% trick.categories.each do |category| %>
-            <span class="badge badge-secondary"><%= category.category_name %></span>
+            <span class="badge badge-warning"><%= category.category_name %></span>
             <% end %>
           </div>
        </div>
