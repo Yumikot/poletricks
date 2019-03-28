@@ -23,7 +23,10 @@
            <% @trick.comments.each do |comment| %>
            <div class="row">
             　　<h5><%= comment.body %></h5>
-            　　<button type="button" class="btn btn-link btn-xs"><%= link_to 'コメントを削除する',trick_comment_path(@trick,comment), method: :delete %></button>
+            　　<% if user_signed_in? && comment.user == current_user %>
+            　　<button type="button" class="btn btn-link btn-xs">
+            　　    <%= link_to 'コメントを削除する',trick_comment_path(@trick,comment), method: :delete %></button
+            　 <% end %>
            <hr>
            </div>
            <% end %> 
