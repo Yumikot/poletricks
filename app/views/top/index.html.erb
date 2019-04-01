@@ -10,9 +10,17 @@
 	<link rel="stylesheet" href="stylesheets/top.scss">
 
 </head>
-<body>
 
-<!--main start-->
+<body>
+	
+<% if user_signed_in? %>
+<div class="container">
+		<%=link_to"動画一覧に移動する",tricks_path, class:"btn btn-primary btn-lg btn-block" %>
+
+</div>
+  
+     <% else %>
+     
 <div class="jumbotron jumbotron-extend">
   <div class="container">
 	  <h1 class="display-4">動画を検索して練習しよう!</h1>
@@ -28,7 +36,6 @@
  </div>
 <!--end main-->
 
-<!--videoexample start-->
 <div class="container">
 	<div class="row">
 	    <div class="col-md-12">
@@ -92,6 +99,7 @@
 					  <%=image_tag'ichiran.png', :size =>'287x200' %>
 				    </div>
 				 </div>
+				 <p></p>
 				 <div class="col-sm mt-3">
 				 	<p class="card-text">2.動画を見て練習します。</p>
 					<div class="card" style="width: 18rem;">
@@ -99,6 +107,7 @@
 					   <%=image_tag'syosai.png', :size =>'287x200' %>
 				    </div>
 				 </div>
+				 <p></p>
 				 <div class="col-sm mt-3">
 				 	<p class="card-text">3.できた技にチェックを入れます。</p>
 					<div class="card" style="width: 18rem;">
@@ -132,7 +141,7 @@
 <p>世界各国で大会の出場やパフォーマンス習得のために修行旅してます</p>
 </div>
 
-
+<% end %>
 　　<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>

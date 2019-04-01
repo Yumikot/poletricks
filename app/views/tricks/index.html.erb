@@ -7,17 +7,25 @@
                     </h4>
                     <h5 class="text-center text-white">Trick総数: <%= Trick.all.size %>
                     達成Trick数<%= current_user.user_tricks.size %></h5>
+                    <p></p>
+                    
+   <%= search_form_for @q do |f| %>
+   
+      <%= f.label :title_cont %>
+      <%= f.search_field :title_cont, placeholder:'Trick名 or Trick名含む' %>
+      <p></p>
+      <%= f.submit '検索!', class: 'btn btn-success' %>
+    <% end %>
                 </div>
      </div>
-     
 </div>
-
-
+  
 <div class="container">
  <div class="row">
+   
     <% @tricks.each do |trick| %>
-      <div class="col-sm mt-3">
-        <div class="card" style="width: 18rem;">
+      <div class="col-sm mt-4">
+        <div class="card" style="width: 16rem;">
           <img src="http://img.youtube.com/vi/<%= trick.video_id %>/mqdefault.jpg" />
           
           <div class="card-body <%= check_user_trick(trick) if user_signed_in? %>"> 
