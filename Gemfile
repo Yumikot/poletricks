@@ -32,9 +32,9 @@ gem 'jquery-rails'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
-gem 'kaminari', '~> 1.1', '>= 1.1.1'
-gem 'will_paginate',           '3.1.5'
-gem 'bootstrap-will_paginate', '1.0.0'
+
+#gem 'will_paginate',           '3.1.5'
+#gem 'bootstrap-will_paginate', '1.0.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -68,6 +68,5 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :production do
-  gem 'pg', '~> 0.19.0', group: :production
-
+ gem 'pg', '~> 0.18.4'
 end
