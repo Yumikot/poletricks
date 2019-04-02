@@ -1,14 +1,17 @@
 class TricksController < ApplicationController
   before_action:authenticate_user!, only: [:show, :create, :new]
   def index
+    
     @q = Trick.ransack(params[:q])
     if params[:q]
       @tricks = @q.result(distinct: true)
     else
       @tricks = Trick.all
+      
     end
-   
+    
   end
+  
   def new
     @trick = Trick.new
   end

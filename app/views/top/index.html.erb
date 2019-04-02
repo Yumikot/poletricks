@@ -15,8 +15,18 @@
 	
 <% if user_signed_in? %>
 <div class="container">
-		<%=link_to"動画一覧に移動する",tricks_path, class:"btn btn-primary btn-lg btn-block" %>
-
+		<%=link_to"マイページの動画一覧に移動",tricks_path, class: "btn btn-outline-primary mx-2" %>
+ <div class="row">
+  <div class="col-md-6 offset-3">
+    	      	<p></p>
+    <h5 class="text-center">動画をtrick名で検索する</h5>
+       <%= search_form_for @q do |f| %>
+			  <%= f.label :title_cont %>
+			  <%= f.search_field :title_cont, placeholder:'Trickname' %>
+			  <%= f.submit 'Search!', class: 'btn btn-success' %>
+       <% end %>
+  </div>
+ </div>
 </div>
   
      <% else %>
@@ -44,24 +54,24 @@
 	</div>
 <div class="row">
     <div class="col-sm mt-3">
-      <div class="card" style="width: 18rem;">
-        <%=image_tag'ironex.jpg', :size =>'287x200' %>
+      <div class="card" style="width: 16rem;">
+        <%=image_tag'ironex.jpg', :size =>'255x190' %>
           <div class="card-body">
             <h5 class="card-title"><%=link_to"IroneX",'https://youtu.be/Kj2DkYYEpJ0',:target => "_blank" %></h5>
           </div>
       </div>
     </div>
   <div class="col-sm mt-3">
-      <div class="card" style="width: 18rem;">
-        <%=image_tag'russian.png', :size =>'287x200' %>
+      <div class="card" style="width: 16rem;">
+        <%=image_tag'russian.png', :size =>'255x190' %>
            <div class="card-body">
              <h5 class="card-title"><%=link_to"Russian sprit",'https://youtu.be/rNZPlN-gWjw',:target => "_blank" %></h5>
            </div>
       </div>
     </div>
     <div class="col-sm mt-3">
-      <div class="card" style="width: 18rem;">
-      <%=image_tag'oanak1.png', :size =>'287x200' %>
+      <div class="card" style="width: 16rem;">
+      <%=image_tag'oanak1.png', :size =>'255x190' %>
           <div class="card-body">
             <h5 class="card-title"><%=link_to"OanaK",'https://youtu.be/3LcRdeSE_XM',:target => "_blank" %></h5>
           </div>
@@ -95,23 +105,23 @@
 		<div class="row">
 				<div class="col-sm mt-3">
 					<p class="card-text">1.やって見たい技を探します</p>
-					<div class="card" style="width: 18rem;">
-					  <%=image_tag'ichiran.png', :size =>'287x200' %>
+					<div class="card" style="width: 16rem;">
+					  <%=image_tag'ichiran.png', :size =>'255x190' %>
 				    </div>
 				 </div>
 				 <p></p>
 				 <div class="col-sm mt-3">
 				 	<p class="card-text">2.動画を見て練習します。</p>
-					<div class="card" style="width: 18rem;">
+					<div class="card" style="width: 16rem;">
 					
-					   <%=image_tag'syosai.png', :size =>'287x200' %>
+					   <%=image_tag'syosai.png', :size =>'255x190' %>
 				    </div>
 				 </div>
 				 <p></p>
 				 <div class="col-sm mt-3">
 				 	<p class="card-text">3.できた技にチェックを入れます。</p>
-					<div class="card" style="width: 18rem;">
-						 <%=image_tag'example.png', :size =>'287x200' %>
+					<div class="card" style="width: 16rem;">
+						 <%=image_tag'example.png', :size =>'255x190' %>
 					</div>
 				 </div>
 	</div>
