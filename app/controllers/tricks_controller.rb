@@ -1,13 +1,11 @@
 class TricksController < ApplicationController
-  before_action:authenticate_user!, only: [:show, :create, :new]
+  before_action:authenticate_user!, only: [:index, :show, :create, :new]
   def index
-    
     @q = Trick.ransack(params[:q])
     if params[:q]
-      @tricks = @q.result(distinct: true)
+      @tricks = @q.result(distinct: true).paginate(page: params[:page],per_page:9)
     else
-      @tricks = Trick.all
-      
+       @tricks = Trick.paginate(page: params[:page],per_page:9)
     end
     
   end

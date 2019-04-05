@@ -1,7 +1,5 @@
 class TopController < ApplicationController
     def index
-        @q = Trick.ransack(params[:q])
-        @trick = @q.result(distinct: true)
-        
+      redirect_to tricks_path
     end
 end
