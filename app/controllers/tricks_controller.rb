@@ -32,7 +32,7 @@ class TricksController < ApplicationController
   
   private
   def trick_params
-    params.require(:trick).permit(:title, :image, :video, :video_id, :user_id, { :category_ids=> [] })
+    params.require(:trick).permit(:title, :image, :video, :video_id, :user_id, :ja_title, { :category_ids=> [] })
   end
 end
   

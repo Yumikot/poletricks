@@ -17,8 +17,11 @@
     <%= form_for @trick do |f| %>
         <%=f.label :title %><br>
         <%=f.text_field :title %>
+        <%=f.label :ja_title %><br>
+        <%=f.text_field :ja_title %>
         <%=f.label :video_id %><br>
         <%=f.text_field :video_id %>
+        
         
         <%= f.label :category_id %>
         <%= f.collection_check_boxes :category_ids, Category.all, :id, :category_name %>

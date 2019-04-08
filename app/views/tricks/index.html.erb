@@ -30,7 +30,9 @@
           <img src="http://img.youtube.com/vi/<%= trick.video_id %>/mqdefault.jpg" />
           
           <div class="card-body <%= check_user_trick(trick) if user_signed_in? %>"> 
-            <h5 class="card-title"><%= link_to trick.title, trick %></h5>
+          
+            <h4 class="card-title"><%= link_to trick.title, trick %></h4>
+            <h6 class="text-muted"><%= trick.ja_title %></h6>
             <% if check_user_trick(trick) == "master" && user_signed_in? %>
               <%= link_to "cancel...", trick_user_trick_path(trick, get_user_trick(trick)), method: :delete, data: {confirm: "本当にキャンセルしますか？"}, class: 'btn btn-secondary' %>
             <% else %>
