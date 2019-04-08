@@ -11,8 +11,10 @@
                     
    <%= search_form_for @q do |f| %>
    
-      <%= f.label :title_cont %>
-      <%= f.search_field :title_cont, placeholder:'Trick名 or Trick名含む' %>
+      
+      <%= f.search_field :title_or_ja_title_cont, placeholder:'Trick名 or Trick名,日本語含む' %>
+      
+  
       <p></p>
       <%= f.submit '検索!', class: 'btn btn-success' %>
     <% end %>
