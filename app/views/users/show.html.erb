@@ -1,0 +1,7 @@
+<h1>usermypage?</h1>
+<h4>現在の達成度: <%= current_user.user_tricks.size %>/<%= Trick.all.size %>
+                    </h4>
+                    <h5>Trick総数: <%= Trick.all.size %>
+                    達成Trick数<%= current_user.user_tricks.size %></h5>
+                    <p></p>
+<%= link_to "動画一覧に戻る", tricks_path %>

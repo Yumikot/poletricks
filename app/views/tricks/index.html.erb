@@ -8,48 +8,39 @@
                     <h5 class="text-center text-white">Trick総数: <%= Trick.all.size %>
                     達成Trick数<%= current_user.user_tricks.size %></h5>
                     <p></p>
-                    
-   <%= search_form_for @q do |f| %>
-   
-      
-      <%= f.search_field :title_or_ja_title_cont, placeholder:'Trick名 or Trick名,日本語含む' %>
-      
-  
+   　　<%= search_form_for @q do |f| %>
+     　<%= f.search_field :title_or_ja_title_cont, placeholder:'Trick名 or Trick名,日本語含む' %>
       <p></p>
-      <%= f.submit '検索!', class: 'btn btn-success' %>
-    <% end %>
+      　<%= f.submit '検索!', class: 'btn btn-success' %>
+    　　<% end %>
                 </div>
      </div>
 </div>
-   <%= will_paginate @tricks %>
+   <%= will_paginate @tricks, previous_label: '' %>
+   
 <div class="container">
  <div class="row">
-   
-   
     <% @tricks.each do |trick| %>
       <div class="col-sm mt-4">
         <div class="card" style="width: 16rem;">
           <img src="http://img.youtube.com/vi/<%= trick.video_id %>/mqdefault.jpg" />
-          
-          <div class="card-body <%= check_user_trick(trick) if user_signed_in? %>"> 
-          
-            <h4 class="card-title"><%= link_to trick.title, trick %></h4>
-            <h6 class="text-muted"><%= trick.ja_title %></h6>
-            <% if check_user_trick(trick) == "master" && user_signed_in? %>
-              <%= link_to "cancel...", trick_user_trick_path(trick, get_user_trick(trick)), method: :delete, data: {confirm: "本当にキャンセルしますか？"}, class: 'btn btn-secondary' %>
+          <div class="card-body <%= book_user_trick(trick) if user_signed_in? %>"> 
+          <h5 class="card-title">
+            <% if user_signed_in? && current_user.bookmarks.pluck(:trick_id).include?(trick.id) %>
+         
+              <%= link_to "", trick_bookmark_path(trick, get_user_bookmark(trick)), method: :delete,  class: 'fas fa-bookmark fa-2x' %>
             <% else %>
-              <%= link_to "master！", trick_user_tricks_path(trick), method: :post, class: 'btn btn-primary' %>
+              <%= link_to "", trick_bookmarks_path(trick), method: :post, class: 'far fa-bookmark fa-2x'  %>
             <% end %>
-            
+            <%= link_to trick.title, trick %></h5>
+            <h6 class="text-muted"><%= trick.ja_title %></h6>
             <% trick.categories.each do |category| %>
-            <span class="badge badge-warning"><%= category.category_name %></span>
+            <span class="badge badge-secondary"><%= category.category_name %></span>
             <% end %>
           </div>
        </div>
       </div>
     <% end %>
-   
-  
  </div>
 </div>
- <%= will_paginate @tricks %>
+ <%= will_paginate @tricks, previous_label: '' %>
