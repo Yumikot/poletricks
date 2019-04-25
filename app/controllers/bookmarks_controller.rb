@@ -1,4 +1,5 @@
 class BookmarksController < ApplicationController
+    before_action :authenticate_user!
     def create
         # @user_id = current_user.id
         # @trick_id = Trick.find(params[:id]).id
