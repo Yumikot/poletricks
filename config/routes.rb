@@ -2,6 +2,10 @@ Rails.application.routes.draw do
   devise_for :users
   root 'top#index'
   get 'videos/index'
+  get  'index' =>'messages#index'
+  post 'confirm' => 'messages#confirm'
+  get 'confirm' => 'messages#confirm'
+  post 'done' => 'messages#done'
   
   
   # get    'login'   => 'sessions#new'
@@ -22,6 +26,6 @@ Rails.application.routes.draw do
   
  
   resources :bookmarks, only: [:index]
- 
+  resources :articles
  
  end

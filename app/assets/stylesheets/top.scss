@@ -8,7 +8,6 @@ $gray-medium-light: #eaeaea;
   -webkit-box-sizing: border-box;
   box-sizing:         border-box;
 }
-
 .logop{
 	margin-right: 30px;
 
@@ -32,7 +31,6 @@ $gray-medium-light: #eaeaea;
  background-image: image-url("reda.png");
  background-repeat: no-repeat;
  background-size:cover;
-
 }
 
 .jumbotron-extend h1,h2,p{
@@ -193,7 +191,10 @@ $gray-medium-light: #eaeaea;
 	padding-left: 20px;
 }
 
-
+/*message*/
+.donemessage{
+	text-align:center;
+}
 
 /* forms */
 
