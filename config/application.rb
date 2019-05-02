@@ -18,6 +18,11 @@ module Poletricks
     ActiveRecord::Base.protected_environments = %w(production staging)
     # config.web_console.whitelisted_ips = '219.100.29.97'
     # config.web_console.whiny_requests = false
+    Bundler.require(*Rails.groups)
+
+    Dotenv::Railtie.load
+
+    HOSTNAME = ENV['HOSTNAME']
    
   end
 end
