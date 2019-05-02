@@ -16,7 +16,7 @@ Rails.application.configure do
     :user_name      => ENV['GMAIL_USERNAME'],
     :password       => ENV['GMAIL_PASSWORD'],
     :domain         => 'heroku.com',
-    :enable_starttls_auto => true
+    #:enable_starttls_auto => true
   }
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
