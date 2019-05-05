@@ -1,5 +1,18 @@
-<h1><%= @article.title %></h1>
-<p><%= @article.text %></p>
+<div class="container">
+ <div class="row">
+  <div class="col-md-6 offset-md-3">
+      <p class="pt-5"></p>
+<h3><%= @article.title %></h3>
+<p></p>
+<strong><%= @article.created_at %></strong>
+<hr>
+<p></p>
+<strong><%= @article.text %></strong>
 
+<p></p>
+<hr>
 <%= link_to "記事一覧に戻る", articles_path %>
 <%= link_to "更新", edit_article_path(@article) %>
+</div>
+ </div>
+</div>

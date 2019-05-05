@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :tricks
+  has_many :articles
   has_many :user_tricks, dependent: :destroy
   has_many :comments
   # has_many :bookmarks, through: :bookmarks, dependent: :destroy

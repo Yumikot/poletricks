@@ -1,5 +1,4 @@
 class ArticlesController < ApplicationController
-    before_action :set_article, only: [:show, :edit, :update, :destroy]
     before_action :authenticate_user!
     def new
         @article = Article.new
@@ -19,7 +18,7 @@ class ArticlesController < ApplicationController
 		end
     end
     def show
-        
+        @article = Article.find(params[:id])
     end
     def edit
         if @article.update(article_params)
@@ -34,7 +33,7 @@ class ArticlesController < ApplicationController
     end
 private
    def article_params
-        params.require(:article).permit(:title, :text)
+        params.require(:article).permit(:title, :text, :created_at)
    end
     
 end

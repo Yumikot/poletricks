@@ -4,8 +4,10 @@
 <p class="pt-5"></p>
 <h1>新規記事作成</h1>
 <%= form_for @article do |f| %>
+<strong>タイトル</strong>
 	<%= f.text_field :title %></br>
 	<p></p>
+	<strong>text</strong>
 	<%= f.text_area :text %></br>
 	<P></P>
 	<%= f.submit :submit %>

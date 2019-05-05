@@ -1,0 +1,16 @@
+ <div class="container">
+ <div class="row">
+  <div class="col-md-6 offset-md-3">
+      <p class="pt-5"></p>
+ <h3>PoletricksBlog</h3>
+ <hr>
+ <% @articles.each do |article| %>
+ <h4><%= article.title %></h4>
+ <%= article.created_at %>
+ <P></P>
+ image
+ <%= article.text %>
+ <hr>
+ 
+ <% end %>
+ 
