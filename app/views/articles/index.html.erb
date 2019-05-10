@@ -5,7 +5,7 @@
  <h3>PoletricksBlog</h3>
  <hr>
  <% @articles.each do |article| %>
- <h4><%= article.title %></h4>
+ <h4><%= link_to article.title, article %></h4>
  <%= article.created_at %>
  <P></P>
  image
@@ -13,4 +13,6 @@
  <hr>
  
  <% end %>
- 
+ </div>
+ </div>
+ </div>

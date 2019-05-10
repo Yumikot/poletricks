@@ -6,9 +6,15 @@
 <p></p>
 <strong><%= @article.created_at %></strong>
 <hr>
+    <% if @article.image? %>
+    <%= image_tag @article.image.thumb.url %>
+  <% else %>
+    <%= image_tag 'no_image.png' %>
+  <% end %>
 <p></p>
 <strong><%= @article.text %></strong>
-
+<p></p>
+シェアボタン設置？
 <p></p>
 <hr>
 <%= link_to "記事一覧に戻る", articles_path %>

@@ -1,21 +1,23 @@
 class ArticlesController < ApplicationController
+    before_action :set_article, only: [:show, :edit, :update, :destroy]
     before_action :authenticate_user!
     def new
         @article = Article.new
     end
     
     def index
-       @articles = Article.all
+       @articles = current_user.articles
     end
     
     def create
-          @article = Article.new(article_params)
-          @article.user = current_user
-		if @article.save
-			redirect_to article_path(@article)
-		else
-			render 'new'
-		end
+        @article = Article.new(article_params)
+        @article.user = current_user
+        # debugger
+        if @article.save
+        	redirect_to article_path(@article)
+        else
+        	render 'new'
+        end
     end
     def show
         @article = Article.find(params[:id])
@@ -33,7 +35,10 @@ class ArticlesController < ApplicationController
     end
 private
    def article_params
-        params.require(:article).permit(:title, :text, :created_at)
+        params.require(:article).permit(:title, :text, :created_at, :image, :image_cache, :remove_image)
+   end
+   def set_article
+		@article = Article.find params[:id]	
    end
     
 end
