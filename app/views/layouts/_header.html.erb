@@ -22,7 +22,6 @@
      
     	<% if user_signed_in? %>
     	
-    
                 <li class="nav-item"><%= link_to "Log out", destroy_user_session_path, method: "delete" %></li>
         <% else %>
               <%#=link_to"Create your account", new_user_registration_path, class: "btn btn-outline-warning mx-2" %>

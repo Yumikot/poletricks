@@ -57,7 +57,9 @@ class ImageUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
-
+   def cache_dir
+    "#{Rails.root}/tmp/uploads"
+   end
 protected
   # 一意となるトークンを作成
   def secure_token
