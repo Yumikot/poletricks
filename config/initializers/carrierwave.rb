@@ -4,6 +4,8 @@ require 'carrierwave/storage/fog'
  
 CarrierWave.configure do |config|
   config.cache_dir = "#{Rails.root}/tmp/uploads"
+ end
+
   if Rails.env.production?
     config.storage :fog
     config.fog_provider = 'fog/aws'
@@ -19,6 +21,6 @@ CarrierWave.configure do |config|
     config.storage :file
     config.enable_processing = false if Rails.env.test?
   end
-end
+
  
 CarrierWave::SanitizedFile.sanitize_regexp = /[^[:word:]\.\-\+]/
