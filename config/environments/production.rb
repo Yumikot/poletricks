@@ -18,6 +18,7 @@ Rails.application.configure do
     :domain         => 'gmail.com',
     #:enable_starttls_auto => true
   }
+  config.active_storage.service = :amazon
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
   # and those relying on copy on write to perform better.
