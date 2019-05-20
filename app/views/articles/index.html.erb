@@ -2,16 +2,21 @@
  <div class="row">
   <div class="col-md-6 offset-md-3">
       <p class="pt-5"></p>
- <h3>PoletricksBlog</h3>
+ <h3 class="text-center">Poletricks Blog</h3>
  <hr>
  <% @articles.each do |article| %>
  <h4><%= link_to article.title, article %></h4>
  <%= article.created_at %>
- <P></P>
- image
- <%= article.text %>
+ <p></p>
+  <%= image_tag article.image_url(:thumb) if article.image?%>
+ 　<%= article.text.truncate(50) %>
+ 　<%= link_to '続きを読む', article %>
+ <p></p>
+ <% if current_user.admin? %>
+  <%= link_to "編集する", edit_article_path(article) %>
+ 	<%= link_to "削除する", article_path(article),method: :delete, data: {confirm: "本当によろしいでしょうか"}%>
+ 	<% end %>
  <hr>
- 
  <% end %>
  </div>
  </div>

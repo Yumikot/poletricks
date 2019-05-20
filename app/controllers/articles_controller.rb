@@ -1,12 +1,13 @@
 class ArticlesController < ApplicationController
     before_action :set_article, only: [:show, :edit, :update, :destroy]
     before_action :authenticate_user!
+    before_action :admin_user, only: [:edit, :update, :new, :destroy]
     def new
         @article = Article.new
     end
     
     def index
-       @articles = current_user.articles
+      @articles = Article.all
     end
     
     def create
@@ -23,12 +24,15 @@ class ArticlesController < ApplicationController
         @article = Article.find(params[:id])
     end
     def edit
+    end 
+    def update
         if @article.update(article_params)
 			redirect_to @article
 		else
 			render 'edit'	
 	    end
     end
+    
     def destroy
         @article.destroy
     	redirect_to articles_path
@@ -40,5 +44,8 @@ private
    def set_article
 		@article = Article.find params[:id]	
    end
-    
+   
+   def admin_user
+       redirect_to articles_path unless current_user.admin
+   end
 end

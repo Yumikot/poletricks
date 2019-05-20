@@ -33,8 +33,13 @@
             <% end %>
             <%= link_to trick.title, trick %></h5>
             <h6 class="text-muted"><%= trick.ja_title %></h6>
+            <% if current_user.admin? %>
+                <%= link_to "編集する", edit_trick_path(trick) %>
+               	<%= link_to "削除する", trick_path(trick),method: :delete, data: {confirm: "本当によろしいでしょうか"}%>
+             	<% end %>
             <% trick.categories.each do |category| %>
             <span class="badge badge-secondary"><%= category.category_name %></span>
+              
             <% end %>
           </div>
        </div>
