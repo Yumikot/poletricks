@@ -16,8 +16,12 @@
   <% end %>
   </div>
 <p></p>
-<strong><%= @article.text %></strong>
-<p></p>
+<hr>
+<div style="color: gray">
+
+<%= auto_link(simple_format(@article.text), html: {target: '_blank'}) %>
+
+</div>
 
 <p></p>
 <hr>
