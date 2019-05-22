@@ -36,7 +36,7 @@ gem 'mini_magick', '~> 4.8'
 gem 'carrierwave'
 gem 'fog-aws'
 #gem 'rmagick', '~> 3.1.0'
-gem 'will_paginate',           '3.1.5'
+gem 'will_paginate',           '3.1.7'
 gem 'bootstrap-will_paginate', '1.0.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
