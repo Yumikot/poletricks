@@ -1,0 +1,28 @@
+<div class="jumbotron">
+<div class ="container">
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <h1>新規ユーザー登録</h1>
+    <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@trick.errors.count, "error") %> prohibited this form_field_value from being saved:</h2>
+  
+        <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <%= form_for @user do |f| %>
+        <%=f.label :email %><br>
+        <%=f.text_field :email %>
+        <%=f.label :password %><br>
+        <%=f.text_field :password %>
+       <p></p>
+        <%=f.submit %>
+    <% end %>
+</div>
+</div>
+</div>
+</div>

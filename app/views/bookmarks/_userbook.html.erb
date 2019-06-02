@@ -1,0 +1,7 @@
+#masterボタン
+<% bookmark = current_user.bookmarks.find_by(user_trick_id: user_trick.id) %>
+<% if bookmark.present? %>
+  <%= link_to "cancel..."(id: bookmark.id), method: :delete, remote: true, class: "#" do %><% end %>
+<% else %>
+  <%= link_to "master!"(trick_id: trick.id),method: :post, remote: true, class: "#" do%><% end %>
+<% end %>

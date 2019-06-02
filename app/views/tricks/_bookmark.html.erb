@@ -1,0 +1,8 @@
+<% bookmark = current_user.bookmarks.find_by(trick_id: trick.id) %>
+<% if bookmark.present? %>
+  <%= link_to trick_bookmark_path(trick, get_user_bookmark(trick)), method: :delete, remote: true, class: "fas fa-bookmark fa-2x" do %><% end %>
+<% else %>
+  <%= link_to trick_bookmarks_path(trick),method: :post, remote: true, class: "far fa-bookmark fa-2x" do %>
+  <% end %>
+<% end %>
+
