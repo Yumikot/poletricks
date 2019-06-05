@@ -9,9 +9,8 @@
 </div>
 <hr>
  <% @users.each do |user| %>
- 
-  id:<%= user.id %>
-  <p></p>email:<%= user.email %>
+  id:<%= link_to user.id, admin_user_path(user) %>
+  <p></p>email:<%= link_to user.email,admin_user_path(user) %>
   <p></p>
   <%= link_to "編集する", edit_admin_user_path(user) %>
   <%= link_to "削除する", user_session_path(user), method: :delete, data: {confirm: "本当によろしいでしょうか"} %>
