@@ -1,4 +1,4 @@
- <% if @user.errors.any? %>
+  <% if @user.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@trick.errors.count, "error") %> prohibited this form_field_value from being saved:</h2>
         <ul>
@@ -8,7 +8,8 @@
         </ul>
       </div>
     <% end %>
-    <%= form_for @user do |f| %>
+    <%= form_for([:admin, @user]) do |f| %>
+   
         <%=f.label :email %><br>
         <%=f.text_field :email %>
         <%=f.label :password %><br>

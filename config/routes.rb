@@ -25,8 +25,6 @@ Rails.application.routes.draw do
   end
   namespace :admin do
     resources :users
-    resources :tricks
-    resources :articles
   end
  
   resources :bookmarks, only: [:index]

@@ -1,6 +1,7 @@
-class Admin::UsersController < ApplicationController
+class Admin::UsersController < User::ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :admin_user, only: [:show, :edit, :update, :new, :destroy]
+  before_action :authenticate_user!, except: [:new, :create]
+  before_action :admin_user, only: [:edit, :update, :destroy]
     def new
      @user = User.new
     end
@@ -11,9 +12,9 @@ class Admin::UsersController < ApplicationController
     
     def create
         @user = User.new(user_params)
+       
         if @user.save
-            redirect_to admin_users_path(@user)
-            
+            redirect_to admin_user_path(@user)
         else
             render 'new'
         end
@@ -28,13 +29,12 @@ class Admin::UsersController < ApplicationController
     
     def update
         if @user.update(user_params)
-			redirect_to @user
+			redirect_to admin_user_path(@user)
 		else
 			render 'edit'	
 	    end
     end
 
-    
     def destroy
         @user.destroy
         redirect_to admin_users_path
