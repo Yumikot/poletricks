@@ -7,21 +7,25 @@ class UserTricksController < ApplicationController
     @bookmark = current_user.bookmarks.create(trick_id: params[:trick_id])
     @trick = Trick.find(params[:trick_id])
     
-    respond_to do |format|
-      format.html
-      format.js
-    end
+    #respond_to do |format|
+      #format.html
+      #format.js
+    #end
   end
 
   def destroy
     @user_trick = UserTrick.find(params[:id])
     @user_trick.destroy
     redirect_back(fallback_location: root_path, notice: 'キャンセルされました')
-    # user_trick= UserTrick.find_by(user_id: current_user.id, trick_id: params[:trick_id])
-    # user_trick.destroy
-    # @trick = UserTrick.find(params[:trick_id])
-    # @trick.unlike(current_user)
-  end
+  
+    
+     #respond_to do |format|
+      #format.html
+      #format.js
+    #end
+    
+    end
+  
   
   def set_trick
     @trick = Trick.find(params[:trick_id])

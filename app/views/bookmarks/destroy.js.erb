@@ -1,1 +1,1 @@
-$("#bookmarks").html("<%= j(render partial: 'bookmarks/bookmark', locals: { tricks: @tricks }) %>");
+$('#bookmark_<%= @trick.id %>').html("<%= j(render partial: 'bookmarks/bookmark', locals: {trick: @trick}) %>")

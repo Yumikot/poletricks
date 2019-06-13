@@ -17,11 +17,13 @@
           
             <h4 class="card-title"><%= link_to trick.title, trick %></h4>
             <h6 class="text-muted"><%= trick.ja_title %></h6>
+            
               <% if check_user_trick(trick) == "master" && user_signed_in? %>
                 <%= link_to "cancel...", trick_user_trick_path(trick, get_user_trick(trick)), method: :delete, data: {confirm: "本当にキャンセルしますか？"}, remote: true, class: 'btn btn-secondary' %>
               <% else %>
                 <%= link_to "master！", trick_user_tricks_path(trick), method: :post, remote: true, class: 'btn btn-primary' %>
               <% end %>
+              
                 <% trick.categories.each do |category| %>
                 <span class="badge badge-secondary"><%= category.category_name %></span>
                 <% end %>

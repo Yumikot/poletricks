@@ -5,7 +5,6 @@ class BookmarksController < ApplicationController
         @bookmark = current_user.bookmarks.build(trick: @trick)
         @bookmark.save
         
-        
         # if @bookmark.save
         #  redirect_to bookmarks_path
         # else
@@ -13,8 +12,8 @@ class BookmarksController < ApplicationController
         # end
         
         respond_to do |format|
-        #   format.html
-          format.js 
+         format.html
+         format.js 
         end
     end
     
@@ -24,10 +23,15 @@ class BookmarksController < ApplicationController
     end
     
     def destroy
+         @trick = Trick.find(params[:trick_id])
          @bookmark = Bookmark.find(params[:id])
-        if @bookmark.destroy
-          redirect_back(fallback_location: root_url)
-        end
-  
+         @bookmark.destroy
+        
+         
+       
+       respond_to do |format|
+         format.html
+          format.js 
+      end
     end
 end
