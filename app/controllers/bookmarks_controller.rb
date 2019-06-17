@@ -26,9 +26,6 @@ class BookmarksController < ApplicationController
          @trick = Trick.find(params[:trick_id])
          @bookmark = Bookmark.find(params[:id])
          @bookmark.destroy
-        
-         
-       
        respond_to do |format|
          format.html
           format.js 

@@ -71,4 +71,6 @@ Rails.application.configure do
       :enable_starttls_auto => true
   }
    config.active_storage.service = :amazon
+   
+  BetterErrors::Middleware.allow_ip! "0.0.0.0/0"
 end

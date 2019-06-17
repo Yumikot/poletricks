@@ -27,12 +27,7 @@
           <div class="card-body <%= book_user_trick(trick) if user_signed_in? %>"> 
           <h5 class="card-title">
               
-            <%# if user_signed_in? && current_user.bookmarks.pluck(:trick_id).include?(trick.id) %>
-              <%#=# link_to "", trick_bookmark_path(trick, get_user_bookmark(trick)), method: :delete,  class: 'fas fa-bookmark fa-2x', remote: true %>
-            <%# else %>
-              <%#=#link_to "", trick_bookmarks_path(trick), method: :post, class: 'far fa-bookmark fa-2x', remote: true  %>
-            <%#end %>
-            
+           
             <div id="bookmark_<%= trick.id %>">
             <%= render partial: "bookmarks/bookmark", locals: {trick: trick} %>
                </div>

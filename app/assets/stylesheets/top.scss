@@ -79,9 +79,11 @@ $gray-medium-light: #eaeaea;
 	margin-top: 40px;
 	margin-bottom: 30px;
 }
+
 .col-sm{
 	margin-left: 40px;
 }
+
 .card-text{
 	text-align:left;
 }
@@ -171,11 +173,16 @@ $gray-medium-light: #eaeaea;
 }
 /*video一覧*/
 .jumbotron-extend4{
-	background-image:url("sanko.png");
+	background-image:url("polekun.png");
+
 	
 }
 .jumbotron-extend4 h1 {
 	color:white;
+}
+/*bookmarkpage*/
+.jumbotron-extend5{
+	background-image:url("polekungreen.png");;
 }
 
 /*関連動画*/
