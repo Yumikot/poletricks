@@ -23,8 +23,10 @@ Rails.application.routes.draw do
   resources :tricks do
     resources :comments, only: [:create, :destroy] 
   end
+  
   namespace :admin do
     resources :users
+    resources :tricks
   end
  
   resources :bookmarks, only: [:index]
