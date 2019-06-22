@@ -5,9 +5,9 @@ class TricksController < ApplicationController
   def index
     @q = Trick.ransack(params[:q])
     if params[:q]
-      @tricks = @q.result(distinct: true).paginate(page: params[:page],per_page:9)
+      @tricks = @q.result(distinct: true).paginate(page: params[:page],per_page:6)
     else
-       @tricks = Trick.paginate(page: params[:page],per_page:9)
+       @tricks = Trick.paginate(page: params[:page],per_page:6)
     end
     
   end
