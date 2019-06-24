@@ -5,7 +5,7 @@ class Admin::TricksController < Admin::ApplicationController
    impressionist :actions=>[:show,:index]
   def index
      @trick = Trick.all
-     @page_viewed = Trick.order('impressions_count DESC').take(10)
+     @page_viewed = Trick.order('impressions_count DESC')
   end
   
  def new
