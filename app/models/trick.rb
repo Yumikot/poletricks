@@ -6,4 +6,6 @@ class Trick < ApplicationRecord
     has_many :comments, dependent: :destroy
     has_many :bookmarks, dependent: :destroy
     belongs_to :user, optional: true
+    
+    is_impressionable counter_cache: true, :column_name =>:impressions_count
 end

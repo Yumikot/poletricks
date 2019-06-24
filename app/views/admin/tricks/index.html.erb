@@ -1,0 +1,37 @@
+<p class="pt-5"></p>
+<div class="jumbotron jumbotron-extend6">
+<div class ="container">
+  <div class="row">
+    <h1>Tricks管理画面</h1>
+   
+    </div>
+  </div>
+</div>
+<div class="newbtn">
+  <%= link_to "新規Trick追加", new_admin_trick_path, class: "btn btn-warning" %> 
+    
+  </div>
+<h2>Impression</h2>
+
+<table>
+  <thead>
+    <tr>
+     
+      <th>Tricki_id</th>
+       <th>Trickサムネイル</th>
+      <th>Trick名</th>
+      <th>Impression</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @page_viewed.each do |trick| %>
+      <tr>
+        <td><%= trick.id %></td>
+        <td><img src="http://img.youtube.com/vi/<%= trick.video_id %>/mqdefault.jpg" /></td>
+        <td><%= trick.title %></td>
+        <td><%= trick.impressions_count %></td>
+      </tr>
+   <% end %>
+  </tbody>
+</table>
+    

@@ -3,17 +3,8 @@
 <div class="row">
   <div class="col-md-6 offset-md-3">
     <h1>管理画面新規投稿</h1>
-    <% if @trick.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@trick.errors.count, "error") %> prohibited this form_field_value from being saved:</h2>
   
-        <ul>
-        <% @trick.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        </ul>
-      </div>
-    <% end %>
+    
     <%= form_for @trick do |f| %>
         <%=f.label :title %><br>
         <%=f.text_field :title %>

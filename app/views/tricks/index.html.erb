@@ -6,7 +6,7 @@
                     <h4 class="text-center text-white">現在の達成度: <%= current_user.user_tricks.size %>/<%= Trick.all.size %>
                     </h4>
                     <h5 class="text-center text-white">Trick総数: <%= Trick.all.size %>
-                    達成Trick数<%= current_user.user_tricks.size %></h5>
+                    達成Trick数: <%= current_user.user_tricks.size %></h5>
                     <p></p>
    　　<%= search_form_for @q do |f| %>
      　<%= f.search_field :title_or_ja_title_cont, placeholder:'Trick名(英語・日本語対応)' %>

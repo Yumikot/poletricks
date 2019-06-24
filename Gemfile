@@ -41,7 +41,7 @@ gem 'bootstrap-will_paginate', '1.0.0'
 gem 'will_paginate-bootstrap4'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'impressionist'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'devise'

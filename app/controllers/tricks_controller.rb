@@ -2,6 +2,7 @@ class TricksController < ApplicationController
   before_action:authenticate_user!, only: [:index, :show, :create, :new]
   before_action :admin_user, only: [:edit, :update, :new, :destroy]
    before_action :set_trick, only: [ :edit, :update, :destroy]
+   impressionist :actions=>[:show,:index]
   def index
     @q = Trick.ransack(params[:q])
     if params[:q]
