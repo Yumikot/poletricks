@@ -1,23 +1,28 @@
-	<p class="pt-5"></p>
+<p class="pt-5"></p>
 <div class="jumbotron jumbotron-extend4">
     <div class="container">
-          <h1 class="text-center">トリックをマスターしよう！</h1>
-                <div class="col-12">
-                    <h4 class="text-center text-white">現在の達成度: <%= current_user.user_tricks.size %>/<%= Trick.all.size %>
-                    </h4>
-                    <h5 class="text-center text-white">Trick総数: <%= Trick.all.size %>
-                    達成Trick数: <%= current_user.user_tricks.size %></h5>
-                    <p></p>
+       
+          <h1 class="text-center">Tricks Page</h1>
+         <h5 class="text-center text-white">練習したいtrickをbookmarkしよう!</h5>
+         <p></p>
+         <p></p>
+            <div class="col-12">
+                <h4 class="text-center text-white">現在の達成度: <%= current_user.user_tricks.size %>/<%= Trick.all.size %>
+                </h4>
+                <h5 class="text-center text-white">Trick総数: <%= Trick.all.size %>
+                    達成Trick数: <%= current_user.user_tricks.size %>
+                </h5>
    　　<%= search_form_for @q do |f| %>
-     　<%= f.search_field :title_or_ja_title_cont, placeholder:'Trick名(英語・日本語対応)' %>
+     　 <%= f.search_field :title_or_ja_title_cont, placeholder:'Trick名(英語・日本語対応)' %>
       <p></p>
       　<%= f.submit '検索!', class: 'btn btn-success' %>
     　<% end %>
-                </div>
+            </div>
      </div>
 </div>
+
     <div class="container">
-    <%= will_paginate @tricks %>
+       <%= will_paginate @tricks %>
     </div>
     
 <div class="container">
@@ -39,10 +44,9 @@
             <% if current_user.admin? %>
                 <%= link_to "編集する", edit_trick_path(trick) %>
                	<%= link_to "削除する", trick_path(trick),method: :delete, data: {confirm: "本当によろしいでしょうか"}%>
-             	<% end %>
+            <% end %>
             <% trick.categories.each do |category| %>
             <span class="badge badge-secondary"><%= category.category_name %></span>
-              
             <% end %>
           </div>
        </div>

@@ -1,14 +1,15 @@
 class Admin::TricksController < Admin::ApplicationController
-   before_action:authenticate_user!, only: [:index, :show, :create, :new]
+  before_action:authenticate_user!, only: [:index, :show, :create, :new]
   before_action :admin_user, only: [:edit, :update, :new, :destroy]
-   before_action :set_trick, only: [ :edit, :update, :destroy]
-   impressionist :actions=>[:show,:index]
+  before_action :set_trick, only: [ :edit, :update, :destroy]
+  impressionist :actions=>[:show,:index]
+  
   def index
      @trick = Trick.all
      @page_viewed = Trick.order('impressions_count DESC')
   end
   
- def new
+  def new
     @trick = Trick.new
   end
   
@@ -25,32 +26,33 @@ class Admin::TricksController < Admin::ApplicationController
   def show
     @trick = Trick.find(params[:id])
     impressionist(@trick, nil, :unique => [:session_hash])
-   
   end
+  
   def edit
   end 
+  
   def update
       if @trick.update(trick_params)
 			redirect_to tricks_path
-		else
+	  else
 			render 'edit'	
-	    end
-    end
-    def destroy
+	  end
+  end
+  
+  def destroy
       @trick.destroy
       redirect_to tricks_path
-    end
-    
-  
-  private
-  def trick_params
-    params.require(:trick).permit(:title, :image, :video, :video_id, :user_id, :ja_title, :impressions_count,{ :category_ids=> [] })
   end
-   def admin_user
-       redirect_to tricks_path unless current_user.admin
-   end
-    def set_trick
-		  @trick = Trick.find params[:id]	
-    end
+    
+  private
+      def trick_params
+        params.require(:trick).permit(:title, :image, :video, :video_id, :user_id, :ja_title, :impressions_count,{ :category_ids=> [] })
+      end
+      def admin_user
+           redirect_to tricks_path unless current_user.admin
+      end
+      def set_trick
+    		  @trick = Trick.find params[:id]	
+      end
 end
   

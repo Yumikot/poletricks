@@ -1,8 +1,9 @@
 class TricksController < ApplicationController
   before_action:authenticate_user!, only: [:index, :show, :create, :new]
   before_action :admin_user, only: [:edit, :update, :new, :destroy]
-   before_action :set_trick, only: [ :edit, :update, :destroy]
-   impressionist :actions=>[:show,:index]
+  before_action :set_trick, only: [ :edit, :update, :destroy]
+  impressionist :actions=>[:show,:index]
+  
   def index
     @q = Trick.ransack(params[:q])
     if params[:q]
@@ -10,7 +11,6 @@ class TricksController < ApplicationController
     else
        @tricks = Trick.paginate(page: params[:page],per_page:6)
     end
-    
   end
   
   def new
@@ -36,29 +36,30 @@ class TricksController < ApplicationController
    def edit
    end 
    
-    def update
-      if @trick.update(trick_params)
-			redirect_to tricks_path
-		else
-			render 'edit'	
-	    end
-    end
-    def destroy
+  def update
+     if @trick.update(trick_params)
+		redirect_to tricks_path
+	 else
+		render 'edit'	
+	 end
+   end
+   
+   def destroy
       @trick.destroy
-    	redirect_to tricks_path
+      redirect_to tricks_path
     end
     
   
   private
-  def trick_params
-    params.require(:trick).permit(:title, :image, :video, :video_id, :user_id, :ja_title, { :category_ids=> [] })
-  end
-   def admin_user
-       redirect_to tricks_path unless current_user.admin
-   end
-    def set_trick
-		  @trick = Trick.find params[:id]	
-    end
+      def trick_params
+        params.require(:trick).permit(:title, :image, :video, :video_id, :user_id, :ja_title, { :category_ids=> [] })
+      end
+      def admin_user
+        redirect_to tricks_path unless current_user.admin
+      end
+      def set_trick
+    	 @trick = Trick.find params[:id]	
+      end
 end
   
 
