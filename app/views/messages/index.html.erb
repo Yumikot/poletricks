@@ -1,20 +1,23 @@
-<div class="container">
- <div class="row">
+ <p class="pt-5"></p>
+ <div class="wrapper">
+<div class="jumbotron ">
+    <div class="container">
+      
+        <h2 class="text-center">お問い合わせ</h2>
+     
+
   <div class="col-md-6 offset-md-3">
-         <p class="pt-5"></p>
-<%= form_for(@message, url: {action: :confirm}) do |f| %>
-  <div>
-     <h2>お問い合わせ</h2>
-       <% if @message.errors.present? %>
-         <div>
-             <strong>エラーがあります</strong>
-             <ul>
-            <% @message.errors.each do |attr, error| %>
-              <li><%= error %></li>
-            <% end %>
-          </ul>
-         </div>
-       <% end %>
+        
+　　　　<%= form_for(@message, url: {action: :confirm}) do |f| %>
+  
+           <% if @message.errors.present? %>
+                 <strong>エラーがあります</strong>
+                 <ul>
+                <% @message.errors.each do |attr, error| %>
+                  <li><%= error %></li>
+                <% end %>
+              </ul>
+           <% end %>
        <div>
            <strong>名前</strong>
            <p><%=f.text_field :name, placeholder: '20文字以内' %></p>
@@ -27,10 +30,12 @@
            <strong>内容</strong>
            <p><%=f.text_area :content, placeholder: '200文字以内' %></p>
        </div>
+       <div>
        <%= f.submit '確認画面へ',class: "btn btn-primary" %>
- </div>
-
+       </div>
+</div>
 <% end %>
-</div>
-</div>
+
+<div>
+<div>  
 </div>

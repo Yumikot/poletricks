@@ -3,6 +3,17 @@
   <div class="col-md-6 offset-md-3">
 <p class="pt-5"></p>
 <h1>新規記事作成</h1>
+ <% if @article.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@article.errors.count, "error") %> prohibited this form_field_value from being saved:</h2>
+  
+        <ul>
+        <% @article.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
 <%= form_for @article do |f| %>
 <strong>タイトル</strong>
 	<%= f.text_field :title %></br>
