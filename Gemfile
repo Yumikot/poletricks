@@ -47,11 +47,10 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'devise'
 gem "aws-sdk-s3", require: false
 group :development, :test do
+  # Call 'byebug' anywhere in the code to ...
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'pry-rails', '~> 0.3.4'
 end
 
 group :development do
