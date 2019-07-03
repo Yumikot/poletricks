@@ -1,3 +1,4 @@
+<div class="wrapper">
 <div class="jumbotron">
 <div class ="container">
 <div class="row">
@@ -27,6 +28,7 @@
         <%= f.collection_check_boxes :category_ids, Category.all, :id, :category_name %>
         <%=f.submit %>
     <% end %>
+</div>
 </div>
 </div>
 </div>
