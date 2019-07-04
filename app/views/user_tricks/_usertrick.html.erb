@@ -11,7 +11,7 @@
 
     <% if check_user_trick(trick) == "master" && user_signed_in? %>
      
-        <%= link_to trick_user_trick_path(trick, get_user_trick(trick)), method: :delete, data: {confirm: "本当にキャンセルしますか？"}, remote: true, class: 'btn btn-secondary' do %>
+        <%= link_to trick_user_trick_path(trick, get_user_trick(trick)), method: :delete, remote: true, class: 'btn btn-secondary' do %>
           <i class=" icon-user icon-black">Cancel...</i>
         <% end %>
      
