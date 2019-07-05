@@ -3,6 +3,7 @@ class TricksController < ApplicationController
   before_action :admin_user, only: [:edit, :update, :new, :destroy]
   before_action :set_trick, only: [ :edit, :update, :destroy]
   impressionist :actions=>[:show,:index]
+  layout 'nofooter'
   
   def index
     @q = Trick.ransack(params[:q])
@@ -11,6 +12,7 @@ class TricksController < ApplicationController
     else
        @tricks = Trick.paginate(page: params[:page],per_page:6)
     end
+    
   end
   
   def new
