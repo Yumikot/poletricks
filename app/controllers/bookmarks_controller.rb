@@ -1,5 +1,6 @@
 class BookmarksController < ApplicationController
     before_action :authenticate_user!
+     layout 'nofooter'
     def create
         @trick = Trick.find(params[:trick_id])
         @bookmark = current_user.bookmarks.build(trick: @trick)
