@@ -45,7 +45,26 @@ $gray-medium-light: #eaeaea;
 .loginpage{
     text-align:center;
 }
+/*topのh3見出し*/
+h3{
+position: relative;
+display: inline-block;
+padding: 0 2.5em;
+text-align: center;
+}
 
+h3:before, h3:after{
+content: '';
+position: absolute;
+top: 50%;
+display: inline-block;
+width: 15%;
+height: 2px;
+background-color: #F4B646;
+}
+
+h3:before {left:0;}
+h3:after {right: 0;}
 
 /*動画*/
 .row{
