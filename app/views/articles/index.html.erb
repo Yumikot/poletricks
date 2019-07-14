@@ -1,12 +1,15 @@
 <div class="wrapper">
  <%= render 'layouts/analytics' %>
+ <p class="pt-5"></p>
  <div class="container">
+ 
+ <div class="blogtitle">    
+  <h2>Poletricks developer's Blog </h2>
+  <p>by U-ki </p>
+ </div> 
+ 
  <div class="row">
   <div class="col-md-6 offset-md-3">
-      <p class="pt-5"></p>
- <h2 class="text-center">Poletricks developer's Blog </h2>
- <p class ="text-center">by U-ki </p>
- <hr>
  <% @articles.each do |article| %>
  <h4><%= link_to article.title, article %></h4>
  <%= article.created_at %>
