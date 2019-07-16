@@ -24,7 +24,7 @@ module Poletricks
     Dotenv::Railtie.load
 
     HOSTNAME = ENV['HOSTNAME']
-    config.assets.initialize_on_precompile = false
+    
 
   end
 end
