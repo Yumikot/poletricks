@@ -8,17 +8,23 @@ $gray-medium-light: #eaeaea;
   -webkit-box-sizing: border-box;
   box-sizing:         border-box;
 }
+
+
 /* ロゴ */
+
 .logop{
 	margin-right: 30px;
 
 }
+
 .nav-item{
 	padding-left: 30px;
 }
+
 .form-inline{
 	padding-right: 20px;
 }
+
 .icon{
 	padding-right: 40px;
 }
@@ -27,7 +33,9 @@ $gray-medium-light: #eaeaea;
 	color:black;
 }
 
+
 /* トップ画像 */
+
 .jumbotron-extend{
  background-image: image-url("reda.png");
  background-repeat: no-repeat;
@@ -95,6 +103,7 @@ h3:after {right: 0;}
 .jumbotron-extend2 p{
 	color:black;
 }
+
 .lead{
 	margin-top: 20px;
 }
@@ -122,7 +131,10 @@ h3:after {right: 0;}
 .btn-cta{
 	width: 300px
 }
+
+
 /*profile*/
+
 .profile{
 	text-align: center;
 	
@@ -271,6 +283,19 @@ input, textarea, select, .uneditable-input {
   margin-left: 0;
 }
 
+/* ブログページ*/
+
+.jumbotron-extend7 {
+	height: auto;
+	background-color: pink;
+	margin: 5vw;
+	padding-top: 3vw;
+	padding-bottom: 3vw;
+	border-radius: 5px;
+}
+.jumbotron-extend7 h2{
+	margin-top:2vw;
+}
 
 /* フッター */
 

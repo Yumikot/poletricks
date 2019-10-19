@@ -1,26 +1,27 @@
 
  <%= render 'layouts/analytics' %>
+
  <p class="pt-5"></p>
- <div class="jumbotron">
+ <div class="jumbotron-extend7">
 
  	 <h2 class="text-center">Poletricks developer's Blog </h2>
  	 <p class="text-center">by U-ki</p>
   
- 
  </div>
+
  <div class="container">
  
  <div class="row">
   <div class="col-md-6 offset-md-3">
 
  <% @articles.each do |article| %>
- <h4><%= link_to article.title, article %></h4>
- <%= article.created_at %>
- <p></p>
-  <%= image_tag article.image_url(:thumb) if article.image?%>
- 　<%= article.text.truncate(50) %>
- 　<%= link_to '続きを読む', article%>
- <p></p>
+	 <h4><%= link_to article.title, article %></h4>
+	 <%= article.created_at %>
+	 <p></p>
+	  <%= image_tag article.image_url(:thumb) if article.image?%>
+	 　<%= article.text.truncate(50) %>
+	 　<%= link_to '続きを読む', article%>
+	 <p></p>
  <% if current_user.admin? %>
   <%= link_to "編集する", edit_article_path(article), class: "btn btn-warning"  %>
  	<%= link_to "削除する", article_path(article), class: "btn btn-danger",method: :delete, data: {confirm: "本当によろしいでしょうか"}%>
