@@ -8,6 +8,7 @@ $gray-medium-light: #eaeaea;
   -webkit-box-sizing: border-box;
   box-sizing:         border-box;
 }
+/* ロゴ */
 .logop{
 	margin-right: 30px;
 
@@ -26,7 +27,7 @@ $gray-medium-light: #eaeaea;
 	color:black;
 }
 
-
+/* トップ画像 */
 .jumbotron-extend{
  background-image: image-url("reda.png");
  background-repeat: no-repeat;
@@ -45,7 +46,9 @@ $gray-medium-light: #eaeaea;
 .loginpage{
     text-align:center;
 }
+
 /*topのh3見出し*/
+
 h3{
 position: relative;
 display: inline-block;
@@ -66,7 +69,8 @@ background-color: #F4B646;
 h3:before {left:0;}
 h3:after {right: 0;}
 
-/*動画*/
+/* 動画 */
+
 .row{
 	margin-top: 20px;
 }
@@ -74,7 +78,9 @@ h3:after {right: 0;}
 	color:black;
 	font-weight:bold;
 }
-/*about*/
+
+/* about */
+
 .about{
 	text-align: center;
 	margin-top: 40px;
@@ -138,40 +144,46 @@ h3:after {right: 0;}
 .card-text{
 	color:black;
 }
+
 /*.card-title{
 	text-align:center;
 }*/
+
 .jumbotron-expand5{
 	margin-top:20px;
 }
-/*trickpage*/
-.tricks{
+
+/* trickpage */
+
+.tricks {
 	margin-bottom: 20px;
 	margin-top: 10px;
 }
 
+/* trickspage */
 
-/*trickspage*/
-.jumbotron-extend3{
-
+.jumbotron-extend3 {
     height: 300px;
 }
 .text-muted{
 	font:black;
 }
 
-/*videopage*/
+/* videopage */
+
 .mainvideo{
 	background: black;
 	margin-bottom: 0;
 	text-align: center;
 }
+
 .video{
 	width:100%;
 	padding-bottom: 56.25%;
 	height:0px;
 	position: relative;
 }
+
 .video iframe{
 	position: absolute;
 	top: 0;
@@ -193,47 +205,58 @@ h3:after {right: 0;}
 	padding-bottom: 30px;
 
 }
-/*video一覧*/
+
+
+/* video一覧 */
+
 .jumbotron-extend4{
 	background-image:url("polekun.png");
-
 	
 }
+
 .jumbotron-extend4 h1 {
 	color:white;
 }
-/*bookmarkpage*/
-.jumbotron-extend5{
+
+
+/* bookmarkpage */
+
+.jumbotron-extend5 {
 	background-image:url("polekungreen.png");;
 }
 
-/*関連動画*/
 
-.relation{
+/* 関連動画 */
+
+.relation {
 	text-align: center;
-	font-weight: bold;
-	
+	font-weight: bold;	
 }
+
 .icon{
 	padding-left: 20px;
 }
 
-/*message*/
-.donemessage{
+
+/* message */
+
+.donemessage {
 	text-align:center;
 }
+
 
 /* forms */
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
-  margin-bottom: 15px;
- 
+  margin-bottom: 15px; 
 }
+
  input {
   height: auto !important;
 }
+
 .checkbox {
   margin-top: -10px;
   margin-bottom: 10px;
@@ -247,6 +270,10 @@ input, textarea, select, .uneditable-input {
   width: auto;
   margin-left: 0;
 }
+
+
+/* フッター */
+
 .footer{
 	background: #191919;
 	height: 170px;
@@ -256,36 +283,45 @@ input, textarea, select, .uneditable-input {
 	margin-top:5px;
 }
 
+
 /*管理画面*/
-.newuser{
+
+.newuser {
 	text-align:center;
 }
-.thumbnail{
+
+.thumbnail {
 	width:30px;
 	height:20px;
 }
-.my-big{
+
+.my-big {
 	font-size:1.2em;
 	margin-right:5px;
 	margin-left:5px;
 }
-.wrapper{
+
+.wrapper {
     min-height: 100vh;
     position: relative;/*←相対位置*/
     padding-bottom: 220px;/*←footerの高さ*/
     box-sizing: border-box;/*←全て含めてmin-height:100vhに*/
 }
-/*articleページ*/
-.blogtitle{
+
+
+/* articleページ */
+
+.blogtitle {
 	padding-top:20px;
 	background-color:#C0C0C0;
 	text-align:center;
 	height:100px;
 }
-.singletitle{
-	text-align:center;
-	
+
+.singletitle {
+	text-align:center;	
 }
-.sideblog{
+
+.sideblog {
 	background-color:pink;
 }
