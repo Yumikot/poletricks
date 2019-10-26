@@ -12,158 +12,175 @@ $gray-medium-light: #eaeaea;
 
 /* ロゴ */
 
-.logop{
+.logop {
 	margin-right: 30px;
-
 }
 
-.nav-item{
+.nav-item {
 	padding-left: 30px;
 }
 
-.form-inline{
+.form-inline {
 	padding-right: 20px;
 }
 
-.icon{
+.icon {
 	padding-right: 40px;
 }
 
-#text1{
+#text1 {
 	color:black;
 }
 
 
 /* トップ画像 */
 
-.jumbotron-extend{
- background-image: image-url("reda.png");
- background-repeat: no-repeat;
- background-size:cover;
- text-align: center;
- color: white;
+.jumbotron-extend {
+	background-image: image-url("reda.png");
+	background-repeat: no-repeat;
+	background-size:cover;
+	text-align: center;
+	color: white;
 }
 
-.logotop{
+.logotop {
 	text-align:center;
 }
-.caption{
+
+.caption {
 	text-align: center;
 	margin-bottom:0;
 }
-.loginpage{
+
+.loginpage {
     text-align:center;
 }
 
-/*topのh3見出し*/
 
-h3{
-position: relative;
-display: inline-block;
-padding: 0 2.5em;
-text-align: center;
+/* topのh3見出し　*/
+
+h3 {
+	position: relative;
+	display: inline-block;
+	padding: 0 2.5em;
+	text-align: center;
 }
 
-h3:before, h3:after{
-content: '';
-position: absolute;
-top: 50%;
-display: inline-block;
-width: 15%;
-height: 2px;
-background-color: #F4B646;
+h3:before, h3:after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	display: inline-block;
+	width: 15%;
+	height: 2px;
+	background-color: #F4B646;
 }
 
-h3:before {left:0;}
-h3:after {right: 0;}
+h3:before {
+	left:0;
+}
+h3:after {
+	right: 0;
+}
+
 
 /* 動画 */
 
-.row{
+.row {
 	margin-top: 20px;
 }
-.col-md-12 h2{
+
+.col-md-12 h2 {
 	color:black;
 	font-weight:bold;
 }
 
+
 /* about */
 
-.about{
+.about {
 	text-align: center;
 	margin-top: 40px;
 }
-.street{
+
+.street {
 	width: 200px;
 	height: 200px;
 	border-radius: 50%;
 	margin-top: 20px;
 	margin-bottom: 20px;
 }
-.jumbotron-extend2 p{
+
+.jumbotron-extend2 p { 
 	color:black;
 }
 
-.lead{
+.lead {
 	margin-top: 20px;
 }
-/*howtouse*/
-.howtouse{
+
+
+/* howtouse */
+
+.howtouse {
 	text-align: center;
 	margin-top: 40px;
 	margin-bottom: 30px;
 }
 
-.col-sm{
+.col-sm {
 	margin-left: 40px;
 }
 
-.card-text{
+.card-text {
 	text-align:left;
 }
-/*cta*/
-.cta{
+
+
+/* cta */
+
+.cta {
 	text-align: center;
 }
-.lets{
+
+.lets {
 	margin-bottom: 20px;
 }
-.btn-cta{
+
+.btn-cta {
 	width: 300px
 }
 
 
-/*profile*/
+/* profile */
 
-.profile{
-	text-align: center;
-	
+.profile {
+	text-align: center;	
 }
-.style_image{
-	border-radius:50%;
+
+.style_image {
+	border-radius: 50%;
 }
-.u-ki{
+
+.u-ki {
 	padding-top: 20px;
 	padding-bottom: 20px;
 	width: 150px;
 	height: 190px;
-
 }
 
-.profile p{
-	color:black;
-}
-.card-text{
-	color:black;
+.profile p {
+	color: black;
 }
 
-/*.card-title{
-	text-align:center;
-}*/
+.card-text {
+	color: black;
+}
 
-.jumbotron-expand5{
+.jumbotron-expand5 {
 	margin-top:20px;
 }
+
 
 /* trickpage */
 
@@ -172,31 +189,34 @@ h3:after {right: 0;}
 	margin-top: 10px;
 }
 
-/* trickspage */
+
+/* trickspage一覧 */
 
 .jumbotron-extend3 {
     height: 300px;
 }
-.text-muted{
+
+.text-muted {
 	font:black;
 }
 
+
 /* videopage */
 
-.mainvideo{
+.mainvideo {
 	background: black;
 	margin-bottom: 0;
 	text-align: center;
 }
 
-.video{
+.video {
 	width:100%;
 	padding-bottom: 56.25%;
 	height:0px;
 	position: relative;
 }
 
-.video iframe{
+.video iframe {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -204,26 +224,24 @@ h3:after {right: 0;}
 	height: 100%;
 }
 
-.videoicon{
+.videoicon {
 	margin-left: 100px;
 }
 
-.videotitle{
+.videotitle {
 	background: black;
 	color: white;
 	height: 50px;
 	margin: 0;
 	text-align: center;
 	padding-bottom: 30px;
-
 }
 
 
 /* video一覧 */
 
-.jumbotron-extend4{
-	background-image:url("polekun.png");
-	
+.jumbotron-extend4 {
+	background-image:url("polekun.png");	
 }
 
 .jumbotron-extend4 h1 {
@@ -245,7 +263,7 @@ h3:after {right: 0;}
 	font-weight: bold;	
 }
 
-.icon{
+.icon {
 	padding-left: 20px;
 }
 
@@ -260,56 +278,59 @@ h3:after {right: 0;}
 /* forms */
 
 input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
-  width: 100%;
-  margin-bottom: 15px; 
+	border: 1px solid #bbb;
+	width: 100%;
+  	margin-bottom: 15px; 
 }
 
  input {
-  height: auto !important;
+  	height: auto !important;
 }
 
 .checkbox {
-  margin-top: -10px;
-  margin-bottom: 10px;
-  span {
-   
-    font-weight: normal;
+	margin-top: -10px;
+	margin-bottom: 10px;
+    span {  
+    	font-weight: normal;
   }
 }
 
 #session_remember_me {
-  width: auto;
-  margin-left: 0;
+	width: auto;
+	margin-left: 0;
 }
+
 
 /* ブログページ*/
 
 .jumbotron-extend7 {
 	height: auto;
 	background-color: pink;
-	margin: 5vw;
+	
 	padding-top: 3vw;
 	padding-bottom: 3vw;
 	border-radius: 5px;
 }
-.jumbotron-extend7 h2{
+
+.jumbotron-extend7 h2 {
 	margin-top:2vw;
 }
 
+
 /* フッター */
 
-.footer{
+.footer {
 	background: #191919;
 	height: 170px;
 	width:100%;
 }
-#fotter-menu1{
+
+#fotter-menu1 {
 	margin-top:5px;
 }
 
 
-/*管理画面*/
+/* 管理画面　*/
 
 .newuser {
 	text-align:center;
